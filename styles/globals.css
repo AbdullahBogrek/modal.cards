@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Sora:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html, body,
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+button {
+    border: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+.hero-section {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E3F2F7 100%);
+}
+
+.nav-link {
+    @apply text-black text-base font-secondary hover:text-primary
+}
+
+.btn {
+    @apply bg-primary text-white font-secondary font-medium rounded-xl  
+}
+
+.section-title {
+    @apply mx-auto font-primary font-semibold text-4xl leading-12
+}
