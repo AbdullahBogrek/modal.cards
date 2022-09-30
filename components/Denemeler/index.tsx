@@ -1,4 +1,4 @@
-const index = () => {
+export default function Home() {
   return (
     <>
       <section className="hero-section bg-white">
@@ -110,7 +110,5 @@ const index = () => {
       
 
     </>
-  )
+  );
 }
-
-export default index

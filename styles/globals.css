@@ -43,7 +43,7 @@ figure {
 }
 
 .nav-link {
-    @apply text-black text-base font-secondary hover:text-primary
+    @apply text-black text-base font-medium leading-4 font-secondary hover:text-primary
 }
 
 .btn {

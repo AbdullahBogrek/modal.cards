@@ -4,7 +4,7 @@ const index = () => {
   return (
     <section className='mb-16 pt-32'>
       <div className="bg-amber-300 max-w-[1194px] mx-auto">
-        <div className="grid grid-cols-1 mb-10">
+        <div className="grid grid-cols-1 mb-10 text-center">
           <h2 className='section-title'>Build great popups without code</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
