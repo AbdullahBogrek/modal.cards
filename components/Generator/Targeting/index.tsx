@@ -39,7 +39,7 @@ const index = () => {
               <h6 className='font-primary font-semibold text-sm tracking-wide text-black'>After X seconds</h6>
               <label htmlFor="default-toggle" className="inline-flex relative items-center cursor-pointer">
                 <input type="checkbox" value="" id="default-toggle" className="sr-only peer"/>
-                <div className="w-11 h-6 bg-generatorite after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>-gray rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-wh
+                <div className="w-11 h-6 bg-generator-gray rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
               </label>
             </div>
             <div className="grid grid-cols-1 mb-6">
@@ -96,7 +96,7 @@ const index = () => {
 
         </div>
 
-        <div className="w-full lg:w-2/3">
+        <div className="w-full lg:w-2/3 ">
         </div>
       </div>
     </div>
