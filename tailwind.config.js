@@ -16,7 +16,8 @@ module.exports = {
       'generator-gray': '#EAEAEA',
       'soft-white': '#FBEEE4',
       'deneme': "#DDDDDD",
-      'code-snippet': "#333333"
+      'code-snippet': "#333333",
+      'soluk-gray': "#717791"
     },
     fontFamily: {
       primary: ["Poppins", "sans-serif"],

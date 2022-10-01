@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <Generator />
       <Features />
       <FAQ />
-      <Footer /> 
+      <Footer />
     </div>
   )
 }
