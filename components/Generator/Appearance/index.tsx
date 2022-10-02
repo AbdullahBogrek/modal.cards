@@ -2,47 +2,54 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div className='px-5 xl:px-0 mt-18'>
-      <div className="flex items-center">
-        <span className='w-9 h-9 rounded-full flex justify-center items-center bg-generator-gray'><p className='font-primary font-semibold text-xs tracking-wide'>2</p></span>
-        <h5 className='ml-3 font-primary font-semibold text-lg leading-9 tracking-wide text-black'>Appearance <span className='font-primary font-normal text-lg tracking-wide leading-9 text-black'>(Size, color, logo)</span></h5>
-      </div>
+<>
+          <div className="flex items-center">
+            <span className='w-9 h-9 rounded-full flex justify-center items-center bg-generator-gray'><p className='font-primary font-semibold text-xs tracking-wide'>2</p></span>
+            <h5 className='ml-3 font-primary font-semibold text-lg leading-9 tracking-wide text-black'>Appearance <span className='font-primary font-normal text-lg tracking-wide leading-9 text-black'>(Size, color, logo)</span></h5>
+          </div>
 
-      <div className="mt-6 flex flex-col lg:flex-row justify-center">
-        <div className="w-full lg:w-1/3 mr-20">
-
-          <div className="mb-6">
+          <div className="my-6">
             <h6 className='mb-3 font-secondary text-sm text-black'>Size</h6>
-            <div className="w-[290px] h-12 bg-soft-gray rounded-xl">
-              <button className='py-[15px] px-[23px] rounded-[10px] mx-[3px] font-secondary font-semibold text-sm text-accordion-gray'>Small</button>
-              <button className='py-[15px] px-[23px] rounded-[10px] mx-[3px] font-secondary font-semibold text-sm text-accordion-gray'>Medium</button>
-              <button className='py-[15px] px-[23px] rounded-[10px] mx-[3px] font-secondary font-semibold text-sm text-accordion-gray'>Large</button>
+            <div className="w-[290px] bg-soft-gray rounded-xl flex flex-row items-center">
+              <button className='py-[15px] px-[23px] rounded-[10px] m-[3px] font-secondary font-semibold text-sm text-accordion-gray hover:bg-white focus:bg-white'>Small</button>
+              <button className='py-[15px] px-[23px] rounded-[10px] m-[3px] font-secondary font-semibold text-sm text-accordion-gray hover:bg-white focus:bg-white'>Medium</button>
+              <button className='py-[15px] px-[23px] rounded-[10px] m-[3px] font-secondary font-semibold text-sm text-accordion-gray hover:bg-white focus:bg-white'>Large</button>
             </div>  
           </div>
 
           <div className="mb-6">
             <h6 className='mb-3 font-secondary text-sm text-black'>Position</h6>
             <div className="grid grid-cols-3 gap-1 w-[82px] h-[55px]">
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
-              <div className="w-6 h-4 border border-deneme hover:bg-primary focus:bg-primary"></div>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary rounded-tl-sm"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary rounded-tr-sm"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary"></button>                                                   
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary rounded-bl-sm"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary"></button>
+              <button className="w-6 h-4 outline outline-1 outline-deneme hover:bg-primary focus:bg-primary rounded-br-sm"></button>
             </div>
           </div>
 
           <div className="mb-6">
             <h6 className='mb-3 font-secondary text-sm text-black'>Colors</h6>
             <div className="flex flex-row gap-2">
-              <div className="w-[42px] h-[42px] rounded-[10px] border">1</div>
-              <div className="w-[42px] h-[42px] rounded-[10px] border">2</div>
-              <div className="w-[42px] h-[42px] rounded-[10px] border">3</div>
-              <div className="w-[42px] h-[42px] rounded-[10px] border">4</div>
-              <div className="w-[42px] h-[42px] rounded-[10px] border">5</div>
+              <div className="inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]">
+                <input type="color" className="h-11 w-11 rounded-xl" onChange={(e) => e.target.value}/>
+              </div>
+              <div className="inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]">
+                <input type="color" className="h-11 w-11 rounded-xl" onChange={(e) => e.target.value}/>
+              </div>
+              <div className="inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]">
+                <input type="color" className="h-11 w-11 rounded-xl" onChange={(e) => e.target.value}/>
+              </div>
+              <div className="inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]">
+                <input type="color" className="h-11 w-11 rounded-xl" onChange={(e) => e.target.value}/>
+              </div>
+              <div className="inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]">
+                <input type="color" className="h-11 w-11 rounded-xl" onChange={(e) => e.target.value}/>
+              </div>
             </div>
           </div>
 
@@ -61,13 +68,7 @@ const index = () => {
               </label>
             </div> 
           </div>
-
-        </div>
-        <div className="bg-red w-full lg:w-2/3">
-          CARD HERE
-        </div>
-      </div>
-    </div>
+</>
   )
 }
 

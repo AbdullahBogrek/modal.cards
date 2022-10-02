@@ -6,6 +6,8 @@ import Content from "./Content"
 import Targeting from "./Targeting"
 import Settings from "./Settings"
 
+import Modal1 from "../Modals/Modal1"
+
 const index = () => {
   return (
     <div className='max-w-[1194px] mx-auto mt-18'>
@@ -17,10 +19,20 @@ const index = () => {
 
       <div className="mt-24">
         <Templates />
-        <Appearance />
-        <Content />
-        <Targeting />
-        <Settings />
+        <div className='px-5 xl:px-0 mt-18'>
+          <div className="flex flex-col lg:flex-row justify-center">
+            <div className="w-full lg:w-1/3 mr-20">
+              <Appearance />
+              <Content />
+              <Targeting />
+              <Settings />
+            </div>
+
+            <div className="w-full lg:w-2/3 h-full sticky top-10">
+              <Modal1 />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
