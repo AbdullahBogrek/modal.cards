@@ -15,29 +15,29 @@ const index = () => {
             </button> 
           </div>
           <div className="flex flex-col md:flex-row pb-24 px-5 xl:px-0 mb-[90px]">
-            <div className="inline-flex items-center mr-5 mb-5 md:mb-0">
+            <div className="hero-section-features mb-5 md:mb-0">
               <i className="mr-2">
                 <img src="/assets/check.svg" className="w-4"/>
               </i>
-              <span className="font-primary text-xs font-normal">Free and paid plans</span>
+              <span className="hero-section-features-items">Free and paid plans</span>
             </div>
-            <div className="inline-flex items-center mr-5 mb-5 md:mb-0">
+            <div className="hero-section-features mb-5 md:mb-0">
               <i className="mr-2">
                 <img src="/assets/check.svg" className="w-4"/>
               </i>
-              <span className="font-primary text-xs font-normal">Setup in minutes</span>
+              <span className="hero-section-features-items">Setup in minutes</span>
             </div>
-            <div className="inline-flex items-center mr-5">
+            <div className="hero-section-features">
               <i className="mr-2">
                 <img src="/assets/check.svg" className="w-4"/>
               </i>
-              <span className="font-primary text-xs font-normal">No credit card required*</span>
+              <span className="hero-section-features-items">No credit card required*</span>
             </div>
           </div>  
         </div>
       </section>
 
-      <section className="bg-gray">
+      <section className="hero-section-stats">
         <div className="grid max-w-[1194px] mx-auto pt-14 md:pt-20 lg:pt-24 px-5 xl:px-0">
 
           <div className="max-w-[800px] h-[468px] rounded-[40px] overflow-hidden -mt-[330px] z-0 mb-[120px]">
@@ -55,10 +55,10 @@ const index = () => {
                     <p className="font-primary font-normal text-lg text-black px-2">Subscribe and Get an Extra <span className="font-semibold underline">25% Off</span> on your first purchase.</p>
                   </div>
                   <div className="mb-3">
-                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl block w-full p-2.5" placeholder="Email address"/>
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl block w-full p-2.5" placeholder="Email address" disabled/>
                   </div>
                   <div className="mb-4">
-                    <button type="button" className="text-white bg-black rounded-xl font-primary font-semibold text-base w-full px-28 py-3 mr-2 mb-2">Subscribe</button>
+                    <button type="button" className="text-white bg-black rounded-xl font-primary font-semibold text-base w-full px-28 py-3 mr-2 mb-2" disabled>Subscribe</button>
                   </div>
                   <div className="text-left">
                     <p className="font-primary font-normal text-[12px] leading-4 text-accordion-gray pr-10">By signing up, you agree to Privacy Policy and Terms of Use.</p>
@@ -84,25 +84,25 @@ const index = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row justify-center items-center mb-[130px]">
-            <div className="h-32 text-white lg:mr-[120px] mb-10 lg:mb-0">
-              <p className="font-primary font-semibold text-7xl leading-20 tracking-wide">3x</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">Increase</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">Conversion Rate</p>
+            <div className="hero-section-stats-col">
+              <p className="hero-section-stats-numbers">3x</p>
+              <p className="hero-section-stats-description">Increase</p>
+              <p className="hero-section-stats-description">Conversion Rate</p>
             </div>
-            <div className="h-32 text-white lg:mr-[120px] mb-10 lg:mb-0">
-              <p className="font-primary font-semibold text-7xl leading-20 tracking-wide">120%</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">Email</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">Subscribers</p>
+            <div className="hero-section-stats-col">
+              <p className="hero-section-stats-numbers">120%</p>
+              <p className="hero-section-stats-description">Email</p>
+              <p className="hero-section-stats-description">Subscribers</p>
             </div>
-            <div className="h-32 text-white lg:mr-[120px] mb-10 lg:mb-0">
-              <p className="font-primary font-semibold text-7xl leading-20 tracking-wide">390%</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">More Customer</p>
-              <p className="font-secondary font-medium text-xs leading-5 tracking-wide">Engagement</p>
+            <div className="hero-section-stats-col">
+              <p className="hero-section-stats-numbers">390%</p>
+              <p className="hero-section-stats-description">More Customer</p>
+              <p className="hero-section-stats-description">Engagement</p>
             </div>
             <div className="h-32 text-white text-center lg:text-left">
-              <p className="font-primary font-semibold text-4xl tracking-tight">Popupsmart meets</p> 
-              <p className="font-primary font-semibold text-4xl tracking-tight">all your business</p>
-              <p className="font-primary font-semibold text-4xl tracking-tight">needs.</p>
+              <p className="hero-section-stats-popupsmart">Popupsmart meets</p> 
+              <p className="hero-section-stats-popupsmart">all your business</p>
+              <p className="hero-section-stats-popupsmart">needs.</p>
             </div>
           </div>
         </div>

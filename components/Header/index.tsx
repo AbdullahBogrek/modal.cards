@@ -12,7 +12,7 @@ const index = () => {
     <>
         <nav className="flex flex-wrap items-center justify-between mx-auto max-w-[1194px] pt-6 px-6 lg:px-0">
             <div className="flex items-center flex-shrink-0 mr-21">
-                <img src="/assets/logo.png" className="mr-[10px] h-9 sm:h-9" alt="Modal cards Logo" />
+                <img src="/assets/logo.png" className="mr-2 h-9 sm:h-9" alt="Modal cards Logo" />
 
                 <span className="self-center text-base font-extrabold whitespace-nowrap">modal.cards</span>
             </div>
@@ -28,7 +28,7 @@ const index = () => {
                 } lg:flex-grow w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-center`}>
                 <div className="text-sm lg:flex-grow mt-5 lg:mt-0">
                     <Link href='/'>
-                        <a href="#" className="inline-flex items-center nav-link mr-6">
+                        <a href="#" className="nav-link-dropdown">
                             <span>Solutions</span> 
                             <i className="ml-1">
                                 <img src='/assets/down.svg'/>
@@ -37,15 +37,15 @@ const index = () => {
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="block nav-link lg:inline-block mt-5 hover:text-primary lg:mt-0 mr-6">Product Tour</a>
+                        <a href="#" className="nav-link mr-6">Product Tour</a>
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="block nav-link lg:inline-block mt-5 hover:text-primary lg:mt-0 mr-6">Showcase</a>
+                        <a href="#" className="nav-link mr-6">Showcase</a>
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="block nav-link lg:inline-block mt-5 hover:text-primary lg:mt-0">Pricing</a>
+                        <a href="#" className="nav-link">Pricing</a>
                     </Link>
                 </div>
                 <div className='mt-5 lg:mt-0'>

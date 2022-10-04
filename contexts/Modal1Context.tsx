@@ -10,7 +10,7 @@ interface IModal1ContextProps {
     backgroundColor: string,
     logo: string,
 
-    contact: {
+    content: {
       title: string,
       subtitle: string,
       inputPlaceholer: string,
@@ -44,7 +44,7 @@ interface IModal1ContextProps {
     setBackgroundColor: (backgroundColor: string) => void,
     setLogo: (logo: string) => void,
 
-    setContact: {
+    setContent: {
       setTitle: (title: string) => void,
       setSubtitle: (subtitle: string) => void,
       setInputPlaceholer: (inputPlaceholer: string) => void,
@@ -80,7 +80,7 @@ const Modal1Context = React.createContext<IModal1ContextProps>({
     backgroundColor: "#FFFFFF",
     logo: "/assets/security_icon.svg",
 
-    contact: {
+    content: {
       title: "Security Code",
       subtitle: "This code expires in 24 hours",
       inputPlaceholer: "Code",
@@ -114,7 +114,7 @@ const Modal1Context = React.createContext<IModal1ContextProps>({
     setBackgroundColor: () => {},
     setLogo: () => {},
 
-    setContact: {
+    setContent: {
       setTitle: () => {},
       setSubtitle: () => {},
       setInputPlaceholer: () => {},
@@ -187,7 +187,7 @@ export const Modal1ContextProvider = ({ children }: Props) => {
             backgroundColor: modalBackgroundColor,
             logo: modalLogo,
 
-            contact: {
+            content: {
               title: modalTitle,
               subtitle: modalSubtitle,
               inputPlaceholer: modalInputPlaceholer,
@@ -221,7 +221,7 @@ export const Modal1ContextProvider = ({ children }: Props) => {
             setBackgroundColor: setModalBackgroundColor,
             setLogo: setModalLogo,
 
-            setContact: {
+            setContent: {
               setTitle: setModalTitle,
               setSubtitle: setModalSubtitle,
               setInputPlaceholer: setModalInputPlaceholer,

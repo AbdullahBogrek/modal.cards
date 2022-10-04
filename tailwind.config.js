@@ -22,7 +22,7 @@ module.exports = {
       //   'soft-white': '#FBEEE4',
       //   'deneme': "#DDDDDD",
       //   'code-snippet': "#333333",
-      //   'soluk-gray': "#717791"
+      // //   'soluk-gray': "#717791"
       // },
       margin: {
         '1': "5px",

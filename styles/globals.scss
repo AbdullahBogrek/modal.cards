@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Sora:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html, body,
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+button {
+    border: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+    margin: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+.btn {
+    @apply bg-[#7D4AEA] text-white font-secondary font-medium rounded-xl  
+}
+
+.btn:hover {
+    @apply bg-[#6c32eb] text-white transition-colors ease-in-out 
+}
+
+.section-title {
+    @apply mx-auto font-primary font-semibold text-4xl leading-12
+}
+
+.generator-title {
+    @apply w-9 h-9 rounded-full flex justify-center items-center bg-[#EAEAEA]
+}
+
+.generator-title-number {
+    @apply font-primary font-semibold text-xs tracking-wide
+}
+
+.generator-title-text {
+    @apply ml-3 font-primary font-semibold text-lg leading-9 tracking-wide text-black
+}
+
+//HEADER
+
+.nav-link {
+    @apply text-[#000000] text-base font-medium leading-4 font-secondary hover:text-[#7D4AEA] block lg:inline-block mt-5 lg:mt-0
+}
+
+.nav-link-dropdown {
+    @apply text-[#000000] text-base font-medium leading-4 font-secondary hover:text-[#7D4AEA] inline-flex items-center mr-6
+}
+
+//HERO
+
+.hero-section {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E3F2F7 100%);
+}
+
+.hero-section-features {
+    @apply inline-flex items-center mr-5
+}
+
+.hero-section-features-items {
+    @apply font-primary text-xs font-normal
+}
+
+.hero-section-stats {
+    @apply bg-[#666666]
+}
+
+.hero-section-stats-col {
+    @apply h-32 text-white lg:mr-[120px] mb-10 lg:mb-0
+}
+
+.hero-section-stats-numbers {
+    @apply font-primary font-semibold text-7xl leading-20 tracking-wide
+}
+
+.hero-section-stats-description {
+    @apply font-secondary font-medium text-xs leading-5 tracking-wide
+}
+
+.hero-section-stats-popupsmart {
+    @apply font-primary font-semibold text-4xl tracking-tight
+}
+
+// APPEARANCE
+
+.appearance-title {
+    @apply mb-3 font-secondary text-sm text-black
+}
+
+.appearance-size-title {
+    @apply w-[290px] bg-[#F5F5F5] rounded-xl flex flex-row items-center
+}
+
+.appearance-size-button {
+    @apply py-[15px] px-[23px] rounded-[10px] m-[3px] font-secondary font-semibold text-sm text-[#777777] hover:bg-white focus:bg-white
+}
+
+.appearance-position-button {
+    @apply w-6 h-4 outline outline-1 outline-[#DDDDDD] hover:bg-[#7D4AEA] focus:bg-[#7D4AEA] 
+}
+
+.appearance-color-input {
+    @apply inline-flex h-[42px] w-[42px] items-center justify-center overflow-hidden rounded-[10px]
+}
+
+// CONTENT
+
+.content-card-input {
+    @apply w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black placeholder-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3
+}
+
+// TARGETING
+
+.targeting-features {
+    @apply flex flex-row justify-between mb-4
+}
+
+.targeting-feature-title {
+    @apply font-primary font-semibold text-sm tracking-wide text-black
+}
+
+.targeting-feature-switch {
+    @apply w-11 h-6 bg-[#EAEAEA] rounded-full
+}
+
+.targeting-visitor-device {
+    @apply bg-[#EAEAEA] rounded-xl
+}
+
+.targeting-visitor-device-content {
+    @apply flex flex-row h-full pl-3 items-center mb-4
+}
+
+.targeting-visitor-device-content-input {
+    @apply w-[18px] h-[18px] mr-2 text-white bg-[#7D4AEA] rounded border-[#666666]
+}
+
+.targeting-features-input {
+    @apply w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3
+}
+
+// SETTINGS 
+
+.settings-checkbox {
+    @apply w-[18px] h-[18px] mr-2 text-white bg-[#7D4AEA] rounded border-[#666666]
+}
+
+.settings-checkbox-label {
+    @apply ml-1 text-sm font-normal font-primary text-black
+}
+
+.setting-code-snippet {
+    @apply bg-[#333333] rounded-lg w-96 h-64 relative mb-3
+}
+
+// TEMPLATES
+
+.templates {
+    @apply flex items-center justify-center bg-[#EAEAEA] relative
+}
+
+.templates-container {
+    @apply w-[276px] h-[200px] rounded-xl hover:bg-[#7D4AEA] hover:transition-colors hover:ease-in hover:bg-opacity-60 flex justify-center items-center z-10
+}
+
+.templates-container-button {
+    @apply text-[#7D4AEA] hidden w-40 h-12 bg-white font-secondary font-semibold text-base text-center hover:-translate-y-1 tracking-wide rounded-xl shadow-template-button
+}
+
+// FEATURES
+
+.features-card {
+    @apply w-full lg:w-1/3 h-64 bg-[#F5F5F5] rounded-xl py-12 mb-5 mx-0 lg:mx-6 lg:mb-0
+}
+
+.features-card-icon {
+    @apply flex justify-center mb-4
+}
+
+.features-card-title {
+    @apply mb-2 text-black font-primary font-semibold text-lg
+}
+
+.features-card-content {
+    @apply text-black font-primary font-normal text-sm
+}
+
+// FAQ
+
+.accordion-button {
+    @apply flex items-center justify-between w-full font-medium text-left border border-x-0
+}
+
+.accordion-button-text {
+    @apply font-primary font-semibold text-[14px] mb-4 lg:text-lg leading-6 mr-1
+}
+
+// FOOTER
+
+.footer-card {
+    @apply py-5 rounded-md flex-col items-center justify-center
+}
+
+.footer-card-icon {
+    @apply flex justify-center items-center mx-auto w-32 h-32 bg-[#7D4AEA] rounded-full
+}
+
+.footer-card-title {
+    @apply font-primary font-semibold text-lg
+}
+
+.features-card-text {
+    @apply font-primary font-normal text-sm tracking-tight mt-2
+}
