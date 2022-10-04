@@ -43,11 +43,11 @@ figure {
 }
 
 .nav-link {
-    @apply text-black text-base font-medium leading-4 font-secondary hover:text-primary
+    @apply text-[#000000] text-base font-medium leading-4 font-secondary hover:text-[#7D4AEA]
 }
 
 .btn {
-    @apply bg-primary text-white font-secondary font-medium rounded-xl  
+    @apply bg-[#7D4AEA] text-white font-secondary font-medium rounded-xl  
 }
 
 .section-title {

@@ -4,26 +4,26 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    colors: {
-      'primary': '#7D4AEA',
-      'white': '#FFFFFF',
-      'black': '#000000',
-      'gray': '#666666',
-      'red': '#EA0F0F',
-      'soft-gray': '#F5F5F5',
-      'accordion-gray': '#777777',
-      'generator-gray': '#EAEAEA',
-      'soft-white': '#FBEEE4',
-      'deneme': "#DDDDDD",
-      'code-snippet': "#333333",
-      'soluk-gray': "#717791"
-    },
+  theme: {  
     fontFamily: {
       primary: ["Poppins", "sans-serif"],
       secondary: ["Inter", "sans-serif"],
     },
     extend: {
+      // colors: {
+      //   'primary': '#7D4AEA',
+      //   'white': '#FFFFFF',
+      //   'black': '#000000',
+      //   'gray': '#666666',
+      //   'red': '#EA0F0F',
+      //   'soft-gray': '#F5F5F5',
+      //   'accordion-gray': '#777777',
+      //   'generator-gray': '#EAEAEA',
+      //   'soft-white': '#FBEEE4',
+      //   'deneme': "#DDDDDD",
+      //   'code-snippet': "#333333",
+      //   'soluk-gray': "#717791"
+      // },
       margin: {
         '1': "5px",
         '2': "10px",
@@ -64,6 +64,16 @@ module.exports = {
       boxShadow: {
         'template-button': '0px 5px 10px 2px rgba(125, 74, 234, 0.27)',
       },
+      width: {
+        'modal1-sm': '25rem',
+        'modal1-md': '30rem',
+        'modal1-lg': '35rem',
+      },
+      height: {
+        'modal1-sm': '22.875rem',
+        'modal1-md': '27.875rem',
+        'modal1-lg': '32.875rem',
+      }
     },
   },
   plugins: [],

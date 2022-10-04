@@ -1,6 +1,13 @@
 import React from 'react'
+import { useModal1Context } from "../../../contexts/Modal1Context";
 
 const index = () => {
+  const { visitorDevice, setVisitorDevice, xSeconds, xScroll, trafficSource, browserLanguage, exitIntent } = useModal1Context();
+
+  // const contactList = Object.entries(visitorDevice).map(([key,val]) => (
+    
+  // ))
+
   return (
         <div className='mt-18'>
           {/* Section Title */}
@@ -18,23 +25,25 @@ const index = () => {
             </label>
           </div>
 
-          <div className="grid grid-cols-2 gap-5 rounded-xl h-12 mb-6">
-            <div className="desktop bg-generator-gray rounded-xl">
+          {
+            <div className="grid grid-cols-2 gap-5 rounded-xl h-12 mb-6">
+              <div className="desktop bg-generator-gray rounded-xl">
                 <div className="flex flex-row h-full pl-3 items-center mb-4">
-                  <input id="default-checkbox" type="checkbox"  className="w-[18px] h-[18px] mr-2 text-white bg-primary rounded border-gray" />
+                  <input id="default-checkbox" type="checkbox"  className="w-[18px] h-[18px] mr-2 text-white bg-primary rounded border-gray"/>
                   <img src="/assets/desktop_icon.svg"/>
                   <label htmlFor="default-checkbox" className="ml-1 text-sm font-normal text-black ">Desktop</label>
                 </div>
-            </div>
-
-            <div className="mobile bg-generator-gray rounded-xl">
-              <div className="flex flex-row h-full pl-3 items-center mb-4">
-                <input id="default-checkbox" type="checkbox"  className="w-[18px] h-[18px] mr-2 text-white bg-primary rounded border-gray" />
-                <img src="/assets/mobile_icon.svg"/>
-                <label htmlFor="default-checkbox" className="ml-1 text-sm font-normal text-black ">Mobile</label>
+              </div>
+  
+              <div className="mobile bg-generator-gray rounded-xl">
+                <div className="flex flex-row h-full pl-3 items-center mb-4">
+                  <input id="default-checkbox" type="checkbox"  className="w-[18px] h-[18px] mr-2 text-white bg-primary rounded border-gray" />
+                  <img src="/assets/mobile_icon.svg"/>
+                  <label htmlFor="default-checkbox" className="ml-1 text-sm font-normal text-black ">Mobile</label>
+                </div>
               </div>
             </div>
-          </div>
+          }
 
           {/* After X Seconds Input */}
           <div className="switch flex flex-row justify-between mb-4">
