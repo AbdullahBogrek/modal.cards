@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Damla
 
-## Getting Started
+## Description 
 
-First, run the development server:
+**modal.cards is a Next.js, Typscript and Tailwind based modal card generator project**. This project was developed within the scope of "[React Practicum](https://www.patika.dev/bootcamp/popupsmart-react-practicum)" realized in cooperation with [Popupsmart](https://popupsmart.com/) and [Patika.dev](https://www.patika.dev/).
 
-```bash
-npm run dev
-# or
-yarn dev
+## Table of Contents
+
+* [General Information](#general-information)
+* [Prerequisites](#prerequisites)
+* [Technologies](#technologies)
+    * [Frontend](#frontend)
+* [Setup](#setup)
+* [Features](#features)
+    * [Room for Improvement](#room-for-improvement)
+    * [To Do](#to-do)
+* [Acknowledgements](#acknowledgements)
+    * [Project Status](#project-status)
+* [Contact](#contact)
+* [License](#license)
+
+## General Information
+
+- You can find the demo of the project [here](https://fascinating-halva-6e5468.netlify.app/). It does not meet all of the project requirements. Thanks for everything.
+
+## Prerequisites    
+
+- Have a billing account on [Google Cloud Console](https://console.cloud.google.com/getting-started?hl=tr).
+
+- Create a project on [Google Cloud Console](https://console.cloud.google.com/getting-started?hl=tr) and add **Maps JavaScript API** and **Geocoding API**. Get the access token.
+
+## Technologies
+
+### Frontend
+- React             - v18.0.21
+- Next.js           - v17.0.2
+- Typescript        - v4.8.3
+- Tailwind          - v3.1.8
+- Sass              - v1.55.0
+- Prettier          - v2.7.1
+- Eslint            - v8.24.0
+- Storybook         - v3.8.0
+
+## Setup
+
+To run this project, install it locally using npm:
+
+For Windows
+
+``` cmd
+> npm install
+> npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- You can select card template and customize your card.
+- You can choose colors, size, position, content, targeting, language support.
+ 
+### Room for Improvement
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Webhook to send data
+- Converting code to html code
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Acknowledgements
 
-## Learn More
+- This project has been developed as a practicum project.
 
-To learn more about Next.js, take a look at the following resources:
+### Project Status
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- The project is running. It has its deficiencies and needs further development. It does not meet all of the project requirements because of my lack of knowledge of Next.js and Typescript.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+Created by [@Abdullah Böğrek](https://tr.linkedin.com/in/abdullahbogrek) - feel free to contact me!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Mail: asbogrek@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is open source and available under the [MIT](https://opensource.org/licenses/MIT).
