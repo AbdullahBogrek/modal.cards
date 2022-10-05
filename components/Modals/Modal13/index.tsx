@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-            <div className="flex flex-col w-[480px] h-[466px] bg-primary justify-center items-center text-center relative border border-generator-gray shadow-xl rounded-xl">
+            <div className="flex flex-col w-[480px] h-[466px] bg-[#7D4AEA] justify-center items-center text-center relative border border-[#EAEAEA] shadow-xl rounded-xl">
 
                 <div className="bg-none mb-8">
                     <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">

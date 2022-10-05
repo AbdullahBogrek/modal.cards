@@ -2,16 +2,16 @@ import React from 'react'
 
 const index = () => {
   return (
-            <div className="flex flex-col w-[740px] h-[400px] bg-primary justify-center items-bottom relative text-center border border-generator-gray shadow-xl rounded-xl">
+            <div className="flex flex-col w-[740px] h-[400px] bg-[#7D4AEA] justify-center items-bottom relative text-center border border-[#EAEAEA] shadow-xl rounded-xl">
                 
                 <h2 className='font-secondary font-bold text-white text-4xl mb-4'>Subscribe to our newsletter</h2>
                 <h4 className='font-secondary font-normal text-white text-2xl leading-7 mb-10'>Receive the flash news in your inbox.</h4>
 
                 <div className="px-48">
-                    <input type="text" className="w-full border border-deneme bg-primary text-white text-base font-secondary font-normal rounded-lg placeholder-white px-[23px] py-[14px] mb-4" placeholder="Enter your email" required />
+                    <input type="text" className="w-full border border-[#DDDDDD] bg-[#7D4AEA] text-white text-base font-secondary font-normal rounded-lg placeholder-white px-[23px] py-[14px] mb-4" placeholder="Enter your email" required />
 
                     <div className="inline-flex flex-row mb-[17px] w-full justify-center items-center">
-                        <input id="default-radio-1" type="radio" value="" name="default-radio" className="w-6 h-6 text-white bg-primary border-accordion-gray"/>
+                        <input id="default-radio-1" type="radio" value="" name="default-radio" className="w-6 h-6 text-white bg-[#7D4AEA] border-[##777777]"/>
                         <label htmlFor="default-radio-1" className="ml-2 text-sm text-white font-secondary font-normal">By subscribe this form I agree to Privacy Policy.</label>
                     </div>
 

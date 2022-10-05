@@ -1,6 +1,6 @@
 import React, { createContext, useContext, ReactNode, useState } from "react";
 
-interface IModal1ContextProps {
+interface IModal2ContextProps {
     size: string,
     position: string,
     textColor: string,
@@ -68,7 +68,7 @@ interface IModal1ContextProps {
     setSendClickData: (sendClickData: boolean) => void,
 }
 
-const Modal1Context = React.createContext<IModal1ContextProps>({
+const Modal2Context = React.createContext<IModal2ContextProps>({
     size: "md",
     position: "center",
     textColor: "#000000",
@@ -136,15 +136,15 @@ const Modal1Context = React.createContext<IModal1ContextProps>({
     setSendClickData: () => {},
 });
 
-export function useModal1Context() {
-    return useContext(Modal1Context);
+export function useModal2Context() {
+    return useContext(Modal2Context);
 }
 
 type Props = {
     children: ReactNode;
 };
 
-export const Modal1ContextProvider = ({ children }: Props) => {
+export const Modal2ContextProvider = ({ children }: Props) => {
     const [modalSize, setModalSize] = useState("md");
     const [modalPosition, setModalPosition] = useState("top-1/2_left-1/2");
     const [modalTextColor, setModalTextColor] = useState("#000000");
@@ -172,78 +172,78 @@ export const Modal1ContextProvider = ({ children }: Props) => {
     const [modalSendClickData, setModalSendClickData] = useState(false);
   
     const value = {
-      size: modalSize,
-      position: modalPosition,
-      textColor: modalTextColor,
-      buttonColor: modalButtonColor,
-      placeholderColor: modalPlaceholderColor,
-      borderColor: modalBorderColor,
-      backgroundColor: modalBackgroundColor,
-      logo: modalLogo,
-      
-      title: modalTitle,
-      subtitle: modalSubtitle,
-      inputPlaceholer: modalInputPlaceholer,
-      button1: modalButton1,
-      button2: modalButton2,
+        size: modalSize,
+        position: modalPosition,
+        textColor: modalTextColor,
+        buttonColor: modalButtonColor,
+        placeholderColor: modalPlaceholderColor,
+        borderColor: modalBorderColor,
+        backgroundColor: modalBackgroundColor,
+        logo: modalLogo,
+        
+        title: modalTitle,
+        subtitle: modalSubtitle,
+        inputPlaceholer: modalInputPlaceholer,
+        button1: modalButton1,
+        button2: modalButton2,
 
-      image: modalImage,
-      
-      visitorDevice: {
-        isActive: modalVisitorDeviceIsActive,
-        desktop: modalVisitorDeviceDesktop,
-        mobile: modalVisitorDeviceMobile
-      },
+        image: modalImage,
+        
+        visitorDevice: {
+          isActive: modalVisitorDeviceIsActive,
+          desktop: modalVisitorDeviceDesktop,
+          mobile: modalVisitorDeviceMobile
+        },
 
-      xSeconds: modalXSeconds,
-      xScroll: modalXScroll,
-      trafficSource: modalTrafficeSource,
-      browserLanguage: modalBrowserLanguage,
-      exitIntent: modalExitIntent,
-  
-      webhookUrl: modalWebhookUrl,
-      sendFromSubmission: modalSendFromSubmission,
-      sendClickData: modalSendClickData,
+        xSeconds: modalXSeconds,
+        xScroll: modalXScroll,
+        trafficSource: modalTrafficeSource,
+        browserLanguage: modalBrowserLanguage,
+        exitIntent: modalExitIntent,
+    
+        webhookUrl: modalWebhookUrl,
+        sendFromSubmission: modalSendFromSubmission,
+        sendClickData: modalSendClickData,
 
-      setSize: setModalSize,
-      setPosition: setModalPosition,
-      setTextColor: setModalTextColor,
-      setButtonColor: setModalButtonColor,
-      setPlaceholderColor: setModalPlaceholderColor,
-      setBorderColor: setModalBorderColor,
-      setBackgroundColor: setModalBackgroundColor,
-      setLogo: setModalLogo,
+        setSize: setModalSize,
+        setPosition: setModalPosition,
+        setTextColor: setModalTextColor,
+        setButtonColor: setModalButtonColor,
+        setPlaceholderColor: setModalPlaceholderColor,
+        setBorderColor: setModalBorderColor,
+        setBackgroundColor: setModalBackgroundColor,
+        setLogo: setModalLogo,
 
-      setTitle: setModalTitle,
-      setSubtitle: setModalSubtitle,
-      setInputPlaceholer: setModalInputPlaceholer,
-      setButton1: setModalButton1,
-      setButton2: setModalButton2,
+        setTitle: setModalTitle,
+        setSubtitle: setModalSubtitle,
+        setInputPlaceholer: setModalInputPlaceholer,
+        setButton1: setModalButton1,
+        setButton2: setModalButton2,
 
-      setImage: setModalImage,
-  
-      setVisitorDevice: {
-        setIsActive: setModalVisitorDeviceIsActive,
-        setDesktop: setModalVisitorDeviceDesktop,
-        setMobile: setModalVisitorDeviceMobile,
-      },
-      
-      setXSeconds: setModalXSeconds,
-      setXScroll: setModalXScroll,
-      setTrafficSource: setModalTrafficeSource,
-      setBrowserLanguage: setModalBrowserLanguage,
-      setExitIntent: setModalExitIntent,
-  
-      setWebhookUrl: setModalWebhookUrl,
-      setSendFromSubmission: setSendFromSubmission,
-      setSendClickData: setModalSendClickData,
+        setImage: setModalImage,
+    
+        setVisitorDevice: {
+          setIsActive: setModalVisitorDeviceIsActive,
+          setDesktop: setModalVisitorDeviceDesktop,
+          setMobile: setModalVisitorDeviceMobile,
+        },
+        
+        setXSeconds: setModalXSeconds,
+        setXScroll: setModalXScroll,
+        setTrafficSource: setModalTrafficeSource,
+        setBrowserLanguage: setModalBrowserLanguage,
+        setExitIntent: setModalExitIntent,
+    
+        setWebhookUrl: setModalWebhookUrl,
+        setSendFromSubmission: setSendFromSubmission,
+        setSendClickData: setModalSendClickData,
     }
 
     return (
-      <Modal1Context.Provider
+      <Modal2Context.Provider
         value={value}
       >
         {children}
-      </Modal1Context.Provider>
+      </Modal2Context.Provider>
     );
 };

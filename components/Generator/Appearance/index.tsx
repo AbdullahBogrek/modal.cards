@@ -3,12 +3,11 @@ import { useModal1Context } from "../../../contexts/Modal1Context";
 import { useModalContext } from "../../../contexts/ModalContext";
 
 const index = () => {
-  const { size, setSize, position, setPosition, textColor, setTextColor, buttonColor, setButtonColor, placeholderColor, setPlaceholderColor, borderColor, setBorderColor, backgroundColor, setBackgroundColor, logo, setLogo } = useModal1Context();
+  const { size, setSize, position, setPosition, textColor, setTextColor, buttonColor, setButtonColor, placeholderColor, setPlaceholderColor, borderColor, setBorderColor, backgroundColor, setBackgroundColor } = useModal1Context();
   const { id, appearance, setContentArea } = useModalContext()
   useEffect(() => {console.log(size)} ,[size])
 
   const handleChange = () =>{
-    setLogo("/assets/trash_icon.svg"),
     setContentArea(true)
   }
 
@@ -67,13 +66,13 @@ const index = () => {
       <div className="">
         <h6 className='appearance-title'>Upload Logo</h6>
         <div className="flex items-center">
-          <label htmlFor="dropzone-file" className={`flex w-[378px] h-[178px] flex-col justify-center items-center bg-white rounded-xl border-2 border-deneme border-dashed ${appearance ? "cursor-pointer" : "cursor-default"} `}>
+          <label htmlFor="dropzone-file" className={`flex w-[378px] h-[178px] flex-col justify-center items-center bg-white rounded-xl border-2 border-[#DDDDDD] border-dashed ${appearance ? "cursor-pointer" : "cursor-default"} `}>
             <div className="flex flex-col justify-center items-center w-20 h-20 bg-white rounded-xl">                   
               <img src="/assets/drop_image.svg" className='w-8 h-8'/>
             </div>
             <div className="flex flex-row">
               <img src="/assets/upload_cloud.svg"/>
-              <p className="font-secondary font-normal text-sm text-black ml-1">Drop your image here or <span className="font-semibold text-primary underline">upload</span></p>
+              <p className="font-secondary font-normal text-sm text-black ml-1">Drop your image here or <span className="font-semibold text-[#7D4AEA] underline">upload</span></p>
             </div>
             <input id="dropzone-file" type="file" className="hidden" onChange={handleChange} disabled={!appearance}/>
           </label>

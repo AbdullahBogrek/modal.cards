@@ -24,13 +24,13 @@ const index = () => {
       {image == "" ? "" : <div className="">
         <h6 className='mb-3 font-secondary text-sm text-black'>Upload Image</h6>
         <div className="flex items-center">
-          <label htmlFor="dropzone-file" className="flex w-[378px] h-[178px] flex-col justify-center items-center bg-white rounded-xl border-2 border-deneme border-dashed cursor-pointer">
+          <label htmlFor="dropzone-file" className="flex w-[378px] h-[178px] flex-col justify-center items-center bg-white rounded-xl border-2 border-[#DDDDDD] border-dashed cursor-pointer">
             <div className="flex flex-col justify-center items-center w-20 h-20 bg-white rounded-xl">                   
               <img src="/assets/drop_image.svg" className='w-8 h-8'/>
             </div>
             <div className="flex flex-row">
               <img src="/assets/upload_cloud.svg"/>
-              <p className="font-secondary font-normal text-sm text-black ml-1">Drop your image here or <span className="font-semibold text-primary underline">upload</span></p>
+              <p className="font-secondary font-normal text-sm text-black ml-1">Drop your image here or <span className="font-semibold text-[#7D4AEA] underline">upload</span></p>
             </div>
             <input id="dropzone-file" type="file" className="hidden" disabled={!contentArea && !appearance}/>
           </label>

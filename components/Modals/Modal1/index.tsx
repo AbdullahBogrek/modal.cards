@@ -11,7 +11,7 @@ const index = () => {
   }, [textColor])
 
   return (
-    <div className={`flex flex-col w-[480px] h-[446px]  justify-center items-center  px-16 relative shadow-2xl`} hidden={toggle} style={{backgroundColor: `${backgroundColor}`}}>
+    <div className={`flex flex-col w-[480px] h-[446px] justify-center items-center  px-16 relative shadow-2xl`} hidden={toggle} style={{backgroundColor: `${backgroundColor}`}}>
       <div className="inline-flex justify-center items-center w-[90px] h-[90px] mb-6 rounded-full" style={{backgroundColor: `${buttonColor}`}}>
         <img src={logo} className='w-12 h-12'/>
       </div>

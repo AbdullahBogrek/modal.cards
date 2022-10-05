@@ -20,7 +20,7 @@ const index = () => {
                             <button type="button" className="text-white bg-black rounded-xl font-primary font-semibold text-base w-full px-28 py-3 mr-2 mb-2" disabled>Subscribe</button>
                         </div>
                         <div className="text-left">
-                            <p className="font-primary font-normal text-[12px] leading-4 text-accordion-gray pr-10">By signing up, you agree to Privacy Policy and Terms of Use.</p>
+                            <p className="font-primary font-normal text-[12px] leading-4 text-[##777777] pr-10">By signing up, you agree to Privacy Policy and Terms of Use.</p>
                         </div>
                     </div>
                 </div>

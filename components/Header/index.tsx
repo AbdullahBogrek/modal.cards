@@ -49,7 +49,7 @@ const index = () => {
                     </Link>
                 </div>
                 <div className='mt-5 lg:mt-0'>
-                    <a href="#" className="inline-block mt-4 lg:mt-0 text-black font-secondary hover:text-primary font-medium pr-8 text-base">Sign in</a>
+                    <a href="#" className="inline-block mt-4 lg:mt-0 text-black font-secondary hover:text-[#7D4AEA] font-medium pr-8 text-base">Sign in</a>
                     <button type="button" className="btn text-base px-5 py-2">Try for free</button>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-            <div className="flex flex-col w-[480px] h-[752px] bg-white relative border border-generator-gray shadow-xl rounded-xl">
+            <div className="flex flex-col w-[480px] h-[752px] bg-white relative border border-[#EAEAEA] shadow-xl rounded-xl">
 
                 <div className="h-[334px] mb-4">
                     <img src="/assets/modal8_cover.png" className='bg-fixed bg-no-repeat bg-cover'/>
@@ -12,11 +12,11 @@ const index = () => {
                     <h2 className='font-secondary font-bold text-black text-3xl mb-4'>Hello stranger</h2>
                     <h4 className='font-secondary font-normal text-black text-xl mb-8'>Sign up now and get 30% discount</h4>
 
-                    <input type="text" className="w-full border border-deneme hover:border-primary focus:border-primary text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-3" placeholder="Enter full name" required />
-                    <input type="text" className="w-full border border-deneme hover:border-primary focus:border-primary text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-6" placeholder="Enter your name" required />
+                    <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-3" placeholder="Enter full name" required />
+                    <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-6" placeholder="Enter your name" required />
 
                     <div className="grid grid-cols-1 w-full mb-4">
-                        <button className='bg-primary font-secondary font-medium text-white text-base py-3.5 rounded-lg'>Sign up</button>
+                        <button className='bg-[#7D4AEA] font-secondary font-medium text-white text-base py-3.5 rounded-lg'>Sign up</button>
                     </div>
 
                     <div className="inline-flex justify-start w-full">
