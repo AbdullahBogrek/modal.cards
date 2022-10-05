@@ -130,8 +130,12 @@ figure {
 
 // CONTENT
 
-.content-card-input {
+.content-card-input-active {
     @apply w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black placeholder-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3
+}
+
+.content-card-input-disable {
+    @apply w-full border border-[#DDDDDD] text-[#8b8b8b] placeholder-[#858383] text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3
 }
 
 // TARGETING
@@ -160,8 +164,20 @@ figure {
     @apply w-[18px] h-[18px] mr-2 text-white bg-[#7D4AEA] rounded border-[#666666]
 }
 
-.targeting-features-input {
-    @apply w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3
+.targeting-features-input-active {
+    @apply w-full border border-[#DDDDDD] text-black text-sm font-secondary font-normal rounded-lg p-1 mb-3
+}
+
+.targeting-features-input-disable {
+    @apply w-full border border-[#DDDDDD] text-[#c0c0c0] text-sm font-secondary font-normal rounded-lg p-1 mb-3
+}
+
+.targeting-features-language-dropdown-active {
+    @apply text-black bg-white font-medium outline outline-[#DDDDDD] rounded-md text-sm w-full mb-2 px-5 py-3 text-center inline-flex justify-between items-center
+}
+
+.targeting-features-language-dropdown-disable {
+    @apply text-[#c0c0c0] bg-white font-medium outline outline-[#DDDDDD] rounded-md text-sm w-full mb-2 px-5 py-3 text-center inline-flex justify-between items-center
 }
 
 // SETTINGS 

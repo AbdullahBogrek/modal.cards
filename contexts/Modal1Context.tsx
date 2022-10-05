@@ -10,13 +10,12 @@ interface IModal1ContextProps {
     backgroundColor: string,
     logo: string,
 
-    content: {
       title: string,
       subtitle: string,
       inputPlaceholer: string,
       button1: string,
       button2: string,
-    },
+      
     image: string,
 
     visitorDevice: {
@@ -44,13 +43,12 @@ interface IModal1ContextProps {
     setBackgroundColor: (backgroundColor: string) => void,
     setLogo: (logo: string) => void,
 
-    setContent: {
       setTitle: (title: string) => void,
       setSubtitle: (subtitle: string) => void,
       setInputPlaceholer: (inputPlaceholer: string) => void,
       setButton1: (button1: string) => void,
       setButton2: (button2: string) => void,
-    },
+
     setImage: (image: string) => void,
 
     setVisitorDevice: {
@@ -80,13 +78,12 @@ const Modal1Context = React.createContext<IModal1ContextProps>({
     backgroundColor: "#FFFFFF",
     logo: "/assets/security_icon.svg",
 
-    content: {
       title: "Security Code",
       subtitle: "This code expires in 24 hours",
       inputPlaceholer: "Code",
       button1: "Cancel",
       button2: "Continue",
-    },
+
     image: "",
 
     visitorDevice: {
@@ -114,13 +111,12 @@ const Modal1Context = React.createContext<IModal1ContextProps>({
     setBackgroundColor: () => {},
     setLogo: () => {},
 
-    setContent: {
       setTitle: () => {},
       setSubtitle: () => {},
       setInputPlaceholer: () => {},
       setButton1: () => {},
       setButton2: () => {},
-    },
+
     setImage: () => {},
 
     setVisitorDevice: {
@@ -186,14 +182,13 @@ export const Modal1ContextProvider = ({ children }: Props) => {
             borderColor: modalBorderColor,
             backgroundColor: modalBackgroundColor,
             logo: modalLogo,
-
-            content: {
+            
               title: modalTitle,
               subtitle: modalSubtitle,
               inputPlaceholer: modalInputPlaceholer,
               button1: modalButton1,
               button2: modalButton2,
-            },
+
             image: modalImage,
             
             visitorDevice: {
@@ -221,13 +216,12 @@ export const Modal1ContextProvider = ({ children }: Props) => {
             setBackgroundColor: setModalBackgroundColor,
             setLogo: setModalLogo,
 
-            setContent: {
               setTitle: setModalTitle,
               setSubtitle: setModalSubtitle,
               setInputPlaceholer: setModalInputPlaceholer,
               setButton1: setModalButton1,
               setButton2: setModalButton2,
-            },
+
             setImage: setModalImage,
         
             setVisitorDevice: {

@@ -1,4 +1,6 @@
+import { ModalContextProvider } from "../contexts/ModalContext";
 import { Modal1ContextProvider } from "../contexts/Modal1Context";
+import { ModalLanguageContextProvider } from "../contexts/LanguageContext";
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from "next/head";
@@ -13,9 +15,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           title="modal.cards"
         ></meta>
       </Head>
-      <Modal1ContextProvider>
-        <Component {...pageProps} />
-      </Modal1ContextProvider>
+      <ModalContextProvider>
+        <ModalLanguageContextProvider>
+          <Modal1ContextProvider>
+            <Component {...pageProps} />
+          </Modal1ContextProvider>
+        </ModalLanguageContextProvider>
+      </ModalContextProvider>
     </>
   );
 }
