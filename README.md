@@ -1,12 +1,11 @@
-# Damla
+# modal.cards
 
 ## Description 
 
-**modal.cards is a Next.js, Typscript and Tailwind based modal card generator project**. This project was developed within the scope of "[React Practicum](https://www.patika.dev/bootcamp/popupsmart-react-practicum)" realized in cooperation with [Popupsmart](https://popupsmart.com/) and [Patika.dev](https://www.patika.dev/).
+**modal.cards is a Next.js, Typscript and Tailwind based modal card generator project**. This project was developed within the scope of "[React Practicum](https://www.patika.dev/bootcamp/popupsmart-react-practicum)" realized in cooperation with [Popupsmart](https://popupsmart.com/) and [Patika.dev](https://www.patika.dev/). You can find the demo of the project [here](https://fascinating-halva-6e5468.netlify.app/). It does not meet all of the project requirements. Thanks for everything.
 
 ## Table of Contents
 
-* [General Information](#general-information)
 * [Prerequisites](#prerequisites)
 * [Technologies](#technologies)
     * [Frontend](#frontend)
@@ -18,10 +17,6 @@
     * [Project Status](#project-status)
 * [Contact](#contact)
 * [License](#license)
-
-## General Information
-
-- You can find the demo of the project [here](https://fascinating-halva-6e5468.netlify.app/). It does not meet all of the project requirements. Thanks for everything.
 
 ## Prerequisites    
 
