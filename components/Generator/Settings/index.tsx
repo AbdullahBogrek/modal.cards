@@ -1,7 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
 import { useModalContext } from "../../../contexts/ModalContext";
 
 const index = () => {
+  const [isClick, setIsClick] = useState<boolean>(false)
   const { appearance, contentArea, targeting, settings } = useModalContext()
 
   const handleClick = () => {
@@ -9,7 +10,6 @@ const index = () => {
   }
 
   return (
-
     <div className={`mt-18 mb-10 lg:mb-0 ${appearance && contentArea && targeting && settings ? "" : "opacity-60 bg-red"}`}>
           <div className="flex items-center mb-6 mt-18">
             <span className='generator-title'><p className='generator-title-number'>5</p></span>
@@ -34,15 +34,19 @@ const index = () => {
 
           <button className='btn px-8 py-[19px] text-lg font-primary tracking-wide mb-6' disabled={!settings} onClick={handleClick}>Get your Code</button>
 
-          <div className="setting-code-snippet">
-            <p className='p-4 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quibusdam, eum officia incidunt laborum fugiat est quo voluptatibus asperiores veniam aperiam optio et hic inventore sequi expedita quaerat impedit quis!</p>
-            <button className='btn font-primary absolute tracking-wide px-4 py-1 rounded-[160px] bottom-[10px] right-[10px]' disabled={!settings}>Copy the code</button>
-          </div>
-          
-          <div className="flex flex-row justify-start items-start">
-            <img src="/assets/warning_sign.svg" className='mr-1' />
-            <p className='w-[340px] font-primary font-normal text-[12px] text-black leading-4'>Copy and paste the embed code above just before the closing "body" tag of your website template file.</p>
-          </div>
+          {isClick && (
+            <>
+              <div className="setting-code-snippet">
+                <p className='p-4 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quibusdam, eum officia incidunt laborum fugiat est quo voluptatibus asperiores veniam aperiam optio et hic inventore sequi expedita quaerat impedit quis!</p>
+                <button className='btn font-primary absolute tracking-wide px-4 py-1 rounded-[160px] bottom-[10px] right-[10px]' disabled={!settings}>Copy the code</button>
+              </div>
+              
+              <div className="flex flex-row justify-start items-start">
+                <img src="/assets/warning_sign.svg" className='mr-1' />
+                <p className='w-[340px] font-primary font-normal text-[12px] text-black leading-4'>Copy and paste the embed code above just before the closing "body" tag of your website template file.</p>
+              </div>
+            </>
+          )}
     </div>
   )
 }
