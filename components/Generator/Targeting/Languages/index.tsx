@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useModalContext } from "../../../../contexts/ModalContext";
-import { useModal1Context } from "../../../../contexts/Modal1Context";
+import { useModalCustomizationContext } from "../../../../contexts/ModalCustomizationContext";
 
 import languages from "./languages.json"
 
 const index = () => {
     const [selectAllLanguages, setSelectAllLanguages] = useState<boolean>(false)
 
-    const { languageToggle, setLanguageToggle, languageSwitch, setLanguageSwitch } = useLanguageContext()
-    const { targeting } = useModalContext()
-    const { browserLanguage, setBrowserLanguage } = useModal1Context();
+    const { languageToggle, setLanguageToggle } = useLanguageContext()
+    const { targeting, setSettings } = useModalContext()
+    const { browserLanguage, setBrowserLanguage, browserLanguageActive, setBrowserLanguageActive } = useModalCustomizationContext();
 
     const handleChange = (e : React.FormEvent<HTMLInputElement>) => {
         e.currentTarget.checked ? setBrowserLanguage([...browserLanguage, e.currentTarget.id]) : (
@@ -30,28 +30,30 @@ const index = () => {
         setBrowserLanguage([])
         setSelectAllLanguages(false)
     }
- 
-    useEffect(() => {console.log(browserLanguage)}, [browserLanguage])
 
     return (
         <>
             <div className="targeting-features">
                 <h6 className='targeting-feature-title'>Browser Language</h6>
-                <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${languageSwitch ? "bg-[#7D4AEA]" : ""}`}
-                    onClick={() => { targeting && setLanguageSwitch(!languageSwitch)}}
+                <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${browserLanguageActive ? "bg-[#7D4AEA]" : ""}`}
+                    onClick={() => {
+                        if (!targeting) return;
+                        const newVal = !browserLanguageActive;
+                        setBrowserLanguageActive(newVal);
+                        if (newVal) setSettings(true);
+                    }}
                     >
-                    {/* Switch */}
-                    <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${languageSwitch ? "transform translate-x-6" : ""}`}
+                    <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${browserLanguageActive ? "transform translate-x-6" : ""}`}
                     ></div>
                 </div>
             </div>
             <div className="grid grid-cols-1 mb-6">
-                <div className="grid grid-cols-1">                    
-                    <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" className={`targeting-features-language-dropdown-${languageSwitch ? "active" : "disable"}`} onClick={() => { languageSwitch && setLanguageToggle(!languageToggle)}} type="button" disabled={!languageSwitch}>
+                <div className="grid grid-cols-1">
+                    <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom" className={`targeting-features-language-dropdown-${browserLanguageActive ? "active" : "disable"}`} onClick={() => { browserLanguageActive && setLanguageToggle(!languageToggle)}} type="button" disabled={!browserLanguageActive}>
                         <span>Choose a country</span> <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
 
-                    <div id="dropdownSearch" className={`${languageToggle ? "block" : "hidden"} z-10 w-full bg-white rounded shadow outline outline-[#DDDDDD]`} onMouseLeave={() => { languageSwitch && setLanguageToggle(!languageToggle)}}>
+                    <div id="dropdownSearch" className={`${languageToggle ? "block" : "hidden"} z-10 w-full bg-white rounded shadow outline outline-[#DDDDDD]`} onMouseLeave={() => { browserLanguageActive && setLanguageToggle(!languageToggle)}}>
                         <ul className="overflow-y-auto h-48 text-sm text-gray-700 my-1" aria-labelledby="dropdownSearchButton">
                             <div className="relative">
                                 <div className="flex items-center px-0 py-3 mx-1 rounded hover:bg-[#e9e8e8] border-b-2">
