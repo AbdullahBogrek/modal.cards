@@ -22,18 +22,37 @@ import Modal12 from "../Modals/Modal12"
 
 
 import { useModalContext } from "../../contexts/ModalContext";
+import { useModalCustomizationContext } from "../../contexts/ModalCustomizationContext";
+
+const POSITION_STYLES: Record<string, React.CSSProperties> = {
+  "top-left":      { justifyContent: "flex-start", alignItems: "flex-start" },
+  "top-center":    { justifyContent: "center",     alignItems: "flex-start" },
+  "top-right":     { justifyContent: "flex-end",   alignItems: "flex-start" },
+  "center-left":   { justifyContent: "flex-start", alignItems: "center" },
+  "center":        { justifyContent: "center",     alignItems: "center" },
+  "center-right":  { justifyContent: "flex-end",   alignItems: "center" },
+  "bottom-left":   { justifyContent: "flex-start", alignItems: "flex-end" },
+  "bottom-center": { justifyContent: "center",     alignItems: "flex-end" },
+  "bottom-right":  { justifyContent: "flex-end",   alignItems: "flex-end" },
+};
+
+const SIZE_SCALE: Record<string, number> = { sm: 0.75, md: 0.85, lg: 0.95 };
 
 const card = [ <Modal1/>, <Modal2/>, <Modal3/>, <Modal4/>, <Modal5/>, <Modal6/>, <Modal7/>, <Modal8/>, <Modal9/>, <Modal10/>, <Modal11/>, <Modal12/> ]
 
 const index = () => {
-  const { id, setAppearance } = useModalContext();
+  const { id } = useModalContext();
+  const { position, size } = useModalCustomizationContext();
+
+  const posStyle = POSITION_STYLES[position] || POSITION_STYLES["center"];
+  const scale = SIZE_SCALE[size] || SIZE_SCALE.md;
 
   return (
     <div className='max-w-[1194px] mx-auto mt-18'>
-      
+
       <div className="px-5 xl:px-0">
         <h2 className='section-title tracking-wide mb-3'>Modal Card Generator</h2>
-        <h4 className='w-[460px] font-primary font-normal text-base tracking-tight'>Measure your return on email marketing efforts easier and faster by using thebest online tools. Popupsmart is ready to help you build an efficient email list!</h4>
+        <h4 className='w-[460px] font-primary font-normal text-base tracking-tight'>Measure your return on email marketing efforts easier and faster by using thebest online tools. getpopup is ready to help you build an efficient email list!</h4>
       </div>
 
       <div className="mt-24">
@@ -47,8 +66,18 @@ const index = () => {
               <Settings />
             </div>
 
-            <div className="w-full lg:w-2/3 h-full sticky top-10">
-              { id === 0 ? <CardPlaceholder /> : card[id - 1] }
+            <div className="w-full lg:w-2/3 h-[700px] sticky top-10 overflow-hidden bg-[#F9F9F9] rounded-xl border border-[#EAEAEA]">
+              { id === 0 ? (
+                <div className="flex items-center justify-center h-full">
+                  <CardPlaceholder />
+                </div>
+              ) : (
+                <div className="flex w-full h-full p-6" style={posStyle}>
+                  <div style={{ transform: `scale(${scale})`, transformOrigin: `${posStyle.alignItems === 'flex-start' ? 'top' : posStyle.alignItems === 'flex-end' ? 'bottom' : 'center'} ${posStyle.justifyContent === 'flex-start' ? 'left' : posStyle.justifyContent === 'flex-end' ? 'right' : 'center'}` }}>
+                    {card[id - 1]}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
