@@ -1,11 +1,15 @@
 import { useModalContext } from "../../../contexts/ModalContext";
+import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 
 const index = () => {
   const { setId, setAppearance } = useModalContext();
+  const { loadTemplateDefaults } = useModalCustomizationContext();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setId(Number(event.currentTarget.id)),
-    setAppearance(true)
+    const templateId = Number(event.currentTarget.id);
+    setId(templateId);
+    loadTemplateDefaults(templateId);
+    setAppearance(true);
   };
 
   return (

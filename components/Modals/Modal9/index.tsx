@@ -1,28 +1,31 @@
 import React from 'react'
+import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 
 const index = () => {
-  return (
-            <div className="flex flex-col w-[480px] h-[752px] bg-white relative border border-[#EAEAEA] shadow-xl rounded-xl">
+  const { title, subtitle, inputPlaceholder1, inputPlaceholder2, button2, linkText2, image, textColor, buttonColor, placeholderColor, borderColor, backgroundColor } = useModalCustomizationContext();
 
-                <div className="h-[334px] mb-4">
-                    <img src="/assets/modal8_cover.png" className='bg-fixed bg-no-repeat bg-cover'/>
+  return (
+            <div className="flex flex-col relative border shadow-xl rounded-xl w-[480px] overflow-hidden" style={{ backgroundColor, borderColor }}>
+
+                <div className="h-[240px] w-full overflow-hidden">
+                    <img src={image || "/assets/modal8_cover.png"} className='w-full h-full object-cover'/>
                 </div>
 
-                <div className="flex flex-col px-16 justify-center items-center">
-                    <h2 className='font-secondary font-bold text-black text-3xl mb-4'>Hello stranger</h2>
-                    <h4 className='font-secondary font-normal text-black text-xl mb-8'>Sign up now and get 30% discount</h4>
+                <div className="flex flex-col px-16 pb-8 pt-4 justify-center items-center">
+                    <h2 className='font-secondary font-bold text-3xl mb-4' style={{ color: textColor }}>{title}</h2>
+                    <h4 className='font-secondary font-normal text-xl mb-8' style={{ color: textColor }}>{subtitle}</h4>
 
-                    <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-3" placeholder="Enter full name" required />
-                    <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-base font-secondary font-normal rounded-lg p-[15px] mb-6" placeholder="Enter your name" required />
+                    <input type="text" className="w-full border text-base font-secondary font-normal rounded-lg p-[15px] mb-3" placeholder={inputPlaceholder1} required style={{ color: placeholderColor, borderColor }}/>
+                    <input type="text" className="w-full border text-base font-secondary font-normal rounded-lg p-[15px] mb-6" placeholder={inputPlaceholder2} required style={{ color: placeholderColor, borderColor }}/>
 
                     <div className="grid grid-cols-1 w-full mb-4">
-                        <button className='bg-[#7D4AEA] font-secondary font-medium text-white text-base py-3.5 rounded-lg'>Sign up</button>
+                        <button className='font-secondary font-medium text-white text-base py-3.5 rounded-lg' style={{ backgroundColor: buttonColor }}>{button2}</button>
                     </div>
 
                     <div className="inline-flex justify-start w-full">
-                        <p className='font-secondary font-normal text-sm text-black text-start'>Already <a href="/" className='underline'>have an account?</a></p>
+                        <p className='font-secondary font-normal text-sm text-start' style={{ color: textColor }}>Already <a href="/" className='underline'>{linkText2}</a></p>
                     </div>
-                            
+
                     <div className="absolute top-5 right-5">
                       <button>
                           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
