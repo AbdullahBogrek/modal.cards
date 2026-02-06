@@ -12,8 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
-          title="getpopup"
-        ></meta>
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://pub-64bc1fc0a86d4715bc552f7b0ae5d6f8.r2.dev/static/getpopup.png"
+        />
+        <title>getpopup</title>
       </Head>
       <ModalContextProvider>
         <ModalLanguageContextProvider>

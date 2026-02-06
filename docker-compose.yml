@@ -1,0 +1,10 @@
+name: getpopup
+
+services:
+  getpopup:
+    build: .
+    container_name: getpopup
+    ports:
+      - "6161:6161"
+    environment:
+      - NODE_ENV=production
