@@ -2,14 +2,16 @@ import { useState } from 'react'
 import { useModalContext } from "../../../contexts/ModalContext";
 import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 import { generateEmbedCode } from "../../../lib/generateEmbedCode";
+import { useStepValidation } from "../../../hooks/useStepValidation";
 
 const index = () => {
   const [isClick, setIsClick] = useState<boolean>(false)
   const [generatedCode, setGeneratedCode] = useState<string>('')
   const [copied, setCopied] = useState<boolean>(false)
 
-  const { id, appearance, contentArea, targeting, settings } = useModalContext()
+  const { id } = useModalContext()
   const customization = useModalCustomizationContext();
+  const { isSettingsEnabled } = useStepValidation();
 
   const handleClick = () => {
     const code = generateEmbedCode({
@@ -69,7 +71,7 @@ const index = () => {
   }
 
   return (
-    <div className={`mt-18 mb-10 lg:mb-0 ${appearance && contentArea && targeting && settings ? "" : "opacity-60 bg-red"}`}>
+    <div className={`mt-18 mb-10 lg:mb-0 ${isSettingsEnabled ? "" : "opacity-60 bg-red"}`}>
           <div className="flex items-center mb-6 mt-18">
             <span className='generator-title'><p className='generator-title-number'>5</p></span>
             <h5 className='generator-title-text'>Settings</h5>
@@ -80,24 +82,24 @@ const index = () => {
           <p className='mb-1 font-primary font-normal text-sm text-black'>Enter your Webhook URL</p>
           <p className='mb-3 font-primary font-normal text-xs text-black'>You can create a simple one with <span className='font-semibold'>make.com</span></p>
 
-          <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3" placeholder="Your Webhook URL" value={customization.webhookUrl} onChange={(e) => customization.setWebhookUrl(e.target.value)} required disabled={!settings}/>
+          <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3" placeholder="Your Webhook URL" value={customization.webhookUrl} onChange={(e) => customization.setWebhookUrl(e.target.value)} required disabled={!isSettingsEnabled}/>
 
           <div className="flex flex-row items-center mb-3">
-            <input id="form-submission-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendFormSubmission} onChange={(e) => customization.setSendFormSubmission(e.target.checked)} disabled={!settings}/>
+            <input id="form-submission-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendFormSubmission} onChange={(e) => customization.setSendFormSubmission(e.target.checked)} disabled={!isSettingsEnabled}/>
             <label htmlFor="form-submission-checkbox" className="settings-checkbox-label">Send form submission</label>
           </div>
           <div className="flex flex-row items-center mb-10">
-            <input id="click-data-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendClickData} onChange={(e) => customization.setSendClickData(e.target.checked)} disabled={!settings}/>
+            <input id="click-data-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendClickData} onChange={(e) => customization.setSendClickData(e.target.checked)} disabled={!isSettingsEnabled}/>
             <label htmlFor="click-data-checkbox" className="settings-checkbox-label">Send click data</label>
           </div>
 
-          <button className='btn px-8 py-[19px] text-lg font-primary tracking-wide mb-6' disabled={!settings} onClick={handleClick}>Get your Code</button>
+          <button className='btn px-8 py-[19px] text-lg font-primary tracking-wide mb-6' disabled={!isSettingsEnabled} onClick={handleClick}>Get your Code</button>
 
           {isClick && (
             <>
               <div className="setting-code-snippet">
                 <pre className='p-4 text-white text-xs font-mono overflow-auto whitespace-pre-wrap break-all max-h-[300px]'>{generatedCode}</pre>
-                <button className='btn font-primary absolute tracking-wide px-4 py-1 rounded-[160px] bottom-[10px] right-[10px]' disabled={!settings} onClick={handleCopy}>{copied ? 'Copied!' : 'Copy the code'}</button>
+                <button className='btn font-primary absolute tracking-wide px-4 py-1 rounded-[160px] bottom-[10px] right-[10px]' disabled={!isSettingsEnabled} onClick={handleCopy}>{copied ? 'Copied!' : 'Copy the code'}</button>
               </div>
 
               <div className="flex flex-row justify-start items-start">

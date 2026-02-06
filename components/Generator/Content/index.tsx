@@ -3,9 +3,10 @@ import { useModalCustomizationContext } from "../../../contexts/ModalCustomizati
 import { useModalContext } from "../../../contexts/ModalContext";
 import { TEMPLATE_FEATURES } from "../../../contexts/templateFeatures";
 import { useImageUpload } from "../../../hooks/useImageUpload";
+import { useStepValidation } from "../../../hooks/useStepValidation";
 
 const index = () => {
-  const { appearance, contentArea, id, setTargeting } = useModalContext()
+  const { id } = useModalContext()
   const {
     title, setTitle, subtitle, setSubtitle,
     bodyText, setBodyText,
@@ -16,9 +17,10 @@ const index = () => {
     linkText1, setLinkText1, linkText2, setLinkText2,
     privacyText, setPrivacyText,
   } = useModalCustomizationContext();
+  const { isContentEnabled } = useStepValidation();
 
   const features = TEMPLATE_FEATURES[id] || TEMPLATE_FEATURES[1];
-  const isDisabled = !contentArea && !appearance;
+  const isDisabled = !isContentEnabled;
   const inputClass = isDisabled ? "content-card-input-disable" : "content-card-input-active";
 
   const onCoverSuccess = useCallback((url: string) => {
@@ -38,7 +40,7 @@ const index = () => {
   };
 
   return (
-    <div className={`${appearance && contentArea ? "" : "opacity-60 bg-red"}`} onClick={() => setTargeting(true)}>
+    <div className={`${isContentEnabled ? "" : "opacity-60 bg-red"}`}>
       <div className="flex items-center mb-6 mt-18">
         <span className='generator-title'><p className='generator-title-number'>3</p></span>
           <h5 className='generator-title-text'>Content</h5>

@@ -4,13 +4,12 @@ import { useModalCustomizationContext } from "../../../contexts/ModalCustomizati
 const TEMPLATE_COUNT = 12;
 
 const index = () => {
-  const { id, setId, setAppearance } = useModalContext();
+  const { id, setId } = useModalContext();
   const { loadTemplateDefaults } = useModalCustomizationContext();
 
   const handleSelect = (templateId: number) => {
     setId(templateId);
     loadTemplateDefaults(templateId);
-    setAppearance(true);
     setTimeout(() => {
       document.getElementById('appearance-section')?.scrollIntoView({ behavior: 'smooth' });
     }, 50);

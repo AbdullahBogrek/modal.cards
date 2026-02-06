@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
-import { useModalContext } from "../../../../contexts/ModalContext";
 import { useModalCustomizationContext } from "../../../../contexts/ModalCustomizationContext";
+import { useStepValidation } from "../../../../hooks/useStepValidation";
 
 import languages from "./languages.json"
 
@@ -9,7 +9,7 @@ const index = () => {
     const [selectAllLanguages, setSelectAllLanguages] = useState<boolean>(false)
 
     const { languageToggle, setLanguageToggle } = useLanguageContext()
-    const { targeting, setSettings } = useModalContext()
+    const { isTargetingEnabled } = useStepValidation();
     const { browserLanguage, setBrowserLanguage, browserLanguageActive, setBrowserLanguageActive } = useModalCustomizationContext();
 
     const handleChange = (e : React.FormEvent<HTMLInputElement>) => {
@@ -37,10 +37,8 @@ const index = () => {
                 <h6 className='targeting-feature-title'>Browser Language</h6>
                 <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${browserLanguageActive ? "bg-[#7D4AEA]" : ""}`}
                     onClick={() => {
-                        if (!targeting) return;
-                        const newVal = !browserLanguageActive;
-                        setBrowserLanguageActive(newVal);
-                        if (newVal) setSettings(true);
+                        if (!isTargetingEnabled) return;
+                        setBrowserLanguageActive(!browserLanguageActive);
                     }}
                     >
                     <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${browserLanguageActive ? "transform translate-x-6" : ""}`}

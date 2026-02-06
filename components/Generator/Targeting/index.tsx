@@ -1,9 +1,9 @@
 import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
-import { useModalContext } from "../../../contexts/ModalContext";
+import { useStepValidation } from "../../../hooks/useStepValidation";
 import Language from "./Languages"
 
 const index = () => {
-  const { appearance, contentArea, targeting, setSettings } = useModalContext()
+  const { isTargetingEnabled } = useStepValidation();
   const {
     visitorDevice, setVisitorDevice,
     xSeconds, setXSeconds, xSecondsActive, setXSecondsActive,
@@ -12,7 +12,7 @@ const index = () => {
     exitIntent, setExitIntent,
   } = useModalCustomizationContext();
 
-  const isDisabled = !(appearance && contentArea && targeting);
+  const isDisabled = !isTargetingEnabled;
 
   return (
         <div className={`mt-18 ${isDisabled ? "opacity-60 bg-red" : ""}`}>
@@ -27,10 +27,10 @@ const index = () => {
             <h6 className='targeting-feature-title'>Visitor Device</h6>
             <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${visitorDevice.isActive ? "bg-[#7D4AEA]" : ""}`}
               onClick={() => {
-                if (!targeting) return;
+                if (!isTargetingEnabled) return;
                 const newVal = !visitorDevice.isActive;
                 setVisitorDevice.setIsActive(newVal);
-                if (newVal) setSettings(true);
+
               }}
             >
               <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${visitorDevice.isActive ? "transform translate-x-6" : ""}`}
@@ -61,10 +61,10 @@ const index = () => {
             <h6 className='targeting-feature-title'>After X seconds</h6>
             <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${xSecondsActive ? "bg-[#7D4AEA]" : ""}`}
               onClick={() => {
-                if (!targeting) return;
+                if (!isTargetingEnabled) return;
                 const newVal = !xSecondsActive;
                 setXSecondsActive(newVal);
-                if (newVal) setSettings(true);
+
               }}
             >
               <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xSecondsActive ? "transform translate-x-6" : ""}`}
@@ -81,10 +81,10 @@ const index = () => {
             <h6 className='targeting-feature-title'>After % Scroll</h6>
             <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${xScrollActive ? "bg-[#7D4AEA]" : ""}`}
               onClick={() => {
-                if (!targeting) return;
+                if (!isTargetingEnabled) return;
                 const newVal = !xScrollActive;
                 setXScrollActive(newVal);
-                if (newVal) setSettings(true);
+
               }}
             >
               <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xScrollActive ? "transform translate-x-6" : ""}`}
@@ -100,10 +100,10 @@ const index = () => {
             <h6 className='targeting-feature-title'>Traffic Source</h6>
             <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${trafficSourceActive ? "bg-[#7D4AEA]" : ""}`}
               onClick={() => {
-                if (!targeting) return;
+                if (!isTargetingEnabled) return;
                 const newVal = !trafficSourceActive;
                 setTrafficSourceActive(newVal);
-                if (newVal) setSettings(true);
+
               }}
             >
               <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${trafficSourceActive ? "transform translate-x-6" : ""}`}
@@ -122,10 +122,10 @@ const index = () => {
             <h6 className='targeting-feature-title'>Exit Intent Targeting</h6>
             <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${exitIntent ? "bg-[#7D4AEA]" : ""}`}
               onClick={() => {
-                if (!targeting) return;
+                if (!isTargetingEnabled) return;
                 const newVal = !exitIntent;
                 setExitIntent(newVal);
-                if (newVal) setSettings(true);
+
               }}
             >
               <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${exitIntent ? "transform translate-x-6" : ""}`}
