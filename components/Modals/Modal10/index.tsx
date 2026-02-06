@@ -28,8 +28,8 @@ const index = () => {
                 </div>
             </div>
 
-            <div className="w-[49%]">
-              <img src={image || "/assets/modal9_cover.png"} className='bg-fixed bg-no-repeat bg-cover'/>
+            <div className="w-[49%] overflow-hidden">
+              <img src={image || "/assets/modal9_cover.png"} className='w-full h-full object-cover'/>
             </div>
 
           </div>

@@ -7,8 +7,8 @@ const index = () => {
   return (
           <div className="flex flex-row relative rounded-xl w-[740px]">
 
-            <div className="flex rounded-xl overflow-hidden shadow-xl w-[74%]">
-                <img src={image || "/assets/modal11_cover.png"}/>
+            <div className="flex rounded-xl overflow-hidden shadow-xl w-[74%] h-[420px]">
+                <img src={image || "/assets/modal11_cover.png"} className='w-full h-full object-cover'/>
             </div>
 
             <div className="px-10 py-8 text-start absolute inset-0 z-10 rounded-xl shadow-xl w-[51%] top-[60px] left-[49%]" style={{ backgroundColor }}>

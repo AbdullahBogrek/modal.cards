@@ -5,7 +5,7 @@ const index = () => {
   const { logo, title, subtitle, inputPlaceholder1, button1, button2, textColor, buttonColor, placeholderColor, borderColor, backgroundColor } = useModalCustomizationContext();
 
   return (
-            <div className="flex flex-col justify-center items-end px-16 py-8 relative text-center border shadow-xl rounded-xl w-[480px]" style={{ backgroundColor, borderColor }}>
+            <div className="flex flex-col justify-center items-center px-16 py-8 relative text-center border shadow-xl rounded-xl w-[480px]" style={{ backgroundColor, borderColor }}>
 
                 <div className="inline-flex justify-center">
                     <img src={logo} className='w-[90px] h-[90px] mb-6'/>

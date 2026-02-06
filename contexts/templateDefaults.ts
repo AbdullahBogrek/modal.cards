@@ -105,11 +105,11 @@ const TEMPLATE_OVERRIDES: Record<number, Partial<ModalCustomizationValues>> = {
   },
   4: {
     logo: "/assets/trash_icon.svg",
-    title: "Security Code",
+    title: "Delete your profile",
     subtitle: "Your profile will be automatically deleted after 1 month.",
     bodyText: "You won\u2019t be able to access to your profile after 30.08.2021.",
-    button1: "Not now",
-    button2: "Continue",
+    button1: "Cancel",
+    button2: "Delete my profile",
     borderColor: "#EAEAEA",
   },
   5: {

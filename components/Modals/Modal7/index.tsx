@@ -11,7 +11,7 @@ const index = () => {
                 <h4 className='font-secondary font-normal text-xl leading-6 mb-11' style={{ color: textColor }}>{subtitle}</h4>
 
                 <div className="grid grid-cols-2 gap-5 w-full">
-                    <button className='outline outline-offset-0 outline-1 font-secondary font-medium text-base py-3.5 rounded-lg' style={{ outlineColor: borderColor, backgroundColor, color: textColor }}>{button1}</button>
+                    <button className='outline outline-offset-0 outline-1 font-secondary font-medium text-base py-3.5 rounded-lg' style={{ outlineColor: textColor, backgroundColor: 'transparent', color: textColor }}>{button1}</button>
                     <button className='font-secondary font-medium text-base py-3.5 rounded-lg' style={{ backgroundColor: buttonColor, color: textColor === '#FFFFFF' ? '#000000' : '#FFFFFF' }}>{button2}</button>
                 </div>
 

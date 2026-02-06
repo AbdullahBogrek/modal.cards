@@ -11,12 +11,12 @@ const index = () => {
                 <h4 className='font-secondary font-normal text-2xl leading-7 mb-10' style={{ color: textColor }}>{subtitle}</h4>
 
                 <div className="px-32">
-                    <input type="text" className="w-full border text-base font-secondary font-normal rounded-lg px-[23px] py-[14px] mb-4" placeholder={inputPlaceholder1} required style={{ backgroundColor, color: placeholderColor, borderColor }}/>
+                    <input type="text" className="w-full border text-base font-secondary font-normal rounded-lg px-[23px] py-[14px] mb-4" placeholder={inputPlaceholder1} required style={{ backgroundColor: 'transparent', color: textColor, borderColor: textColor }}/>
 
                     {privacyText && (
                       <div className="inline-flex flex-row mb-[17px] w-full justify-center items-center">
-                          <input id="privacy-radio" type="radio" value="" name="default-radio" className="w-6 h-6 border-[#777777]" style={{ backgroundColor }}/>
-                          <label htmlFor="privacy-radio" className="ml-2 text-sm font-secondary font-normal" style={{ color: textColor }}>{privacyText}</label>
+                          <input id="privacy-checkbox" type="checkbox" className="w-4 h-4 shrink-0 accent-white" />
+                          <label htmlFor="privacy-checkbox" className="ml-2 text-sm font-secondary font-normal" style={{ color: textColor }}>{privacyText}</label>
                       </div>
                     )}
 

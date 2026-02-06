@@ -7,7 +7,7 @@ const index = () => {
   const { textColor, buttonColor, placeholderColor, borderColor, backgroundColor, logo, title, subtitle, inputPlaceholder1, button1, button2 } = useModalCustomizationContext();
 
   return (
-    <div className={`flex flex-col justify-center items-center px-16 py-8 relative shadow-2xl w-[480px]`} hidden={toggle} style={{ backgroundColor }}>
+    <div className={`flex flex-col justify-center items-center px-16 py-8 relative shadow-2xl rounded-xl w-[480px]`} hidden={toggle} style={{ backgroundColor }}>
       <div className="inline-flex justify-center items-center w-[90px] h-[90px] mb-6 rounded-full" style={{ backgroundColor: buttonColor }}>
         <img src={logo} className='w-12 h-12'/>
       </div>
@@ -23,7 +23,7 @@ const index = () => {
       </div>
 
       <div className="absolute top-5 right-5">
-        <a href="/" onClick={() => setToggle(!toggle)}><img src="/assets/modal_close_black.svg" className='w-9 h-9'/></a>
+        <button onClick={() => setToggle(!toggle)}><img src="/assets/modal_close_black.svg" className='w-9 h-9'/></button>
       </div>
     </div>
   )

@@ -19,8 +19,8 @@ const index = () => {
                 <h2 className='font-secondary font-bold text-3xl mb-4' style={{ color: textColor }}>{title}</h2>
                 <h4 className='font-secondary font-normal text-xl leading-6 mb-11 px-16' style={{ color: textColor }}>{subtitle}</h4>
 
-                <div className="grid grid-cols-1 w-full absolute bottom-0">
-                    <button className='bg-black bg-opacity-10 font-secondary font-medium text-xl py-3.5 rounded-lg' style={{ color: textColor }}>{button2}</button>
+                <div className="grid grid-cols-1 w-full absolute bottom-0 overflow-hidden rounded-b-xl">
+                    <button className='bg-black bg-opacity-10 font-secondary font-medium text-xl py-3.5' style={{ color: textColor }}>{button2}</button>
                 </div>
 
                 <div className="absolute top-5 right-5">

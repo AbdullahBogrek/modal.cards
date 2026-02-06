@@ -20,9 +20,10 @@ const index = () => {
                     <button className='outline outline-offset-0 outline-1 font-secondary font-medium text-base py-3.5 rounded-lg' style={{ outlineColor: borderColor, backgroundColor, color: textColor }}>{button1}</button>
                 </div>
 
-                <div className="absolute top-5 right-5">
-                    <img src="/assets/modal_close_black.svg" className='w-9 h-9'/>
-                </div>
+            </div>
+
+            <div className="absolute top-5 right-5">
+                <img src="/assets/modal_close_black.svg" className='w-9 h-9'/>
             </div>
 
           </div>
