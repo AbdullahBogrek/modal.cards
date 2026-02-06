@@ -52,9 +52,9 @@ const index = () => {
         <div className="grid grid-cols-1 mt-16">
           <div className="text-center">
             <div className="flex justify-center mb-3">
-              <img src="/assets/popupsmart.svg" className='w-8 h-8' />
+              <img src="/assets/getpopup.svg" className='w-8 h-8' />
             </div>
-            <h6 className='font-primary font-normal text-black text-sm leading-4 tracking-tight'>Powered by Popupsmart</h6>
+            <h6 className='font-primary font-normal text-black text-sm leading-4 tracking-tight'>Powered by getpopup</h6>
           </div>
         </div>
       </div>

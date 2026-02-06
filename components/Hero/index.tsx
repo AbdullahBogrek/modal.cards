@@ -61,9 +61,9 @@ const index = () => {
               <p className="hero-section-stats-description">Engagement</p>
             </div>
             <div className="h-32 text-white text-center lg:text-left">
-              <p className="hero-section-stats-popupsmart">Popupsmart meets</p> 
-              <p className="hero-section-stats-popupsmart">all your business</p>
-              <p className="hero-section-stats-popupsmart">needs.</p>
+              <p className="hero-section-stats-getpopup">getpopup meets</p>
+              <p className="hero-section-stats-getpopup">all your business</p>
+              <p className="hero-section-stats-getpopup">needs.</p>
             </div>
           </div>
         </div>
