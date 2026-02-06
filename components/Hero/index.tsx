@@ -12,7 +12,11 @@ const index = () => {
             <p className="tracking-tight font-normal font-primary text-black text-xl md:text-2xl lg:text-3xl lg:leading-11">A utility-first CSS framework packed with classeslike flex, pt-4, text-center and rotate-90 that can becomposed to build any design, directly in your markup.</p>
           </div>
           <div className="mb-8 px-5 xl:px-0">
-            <button type="button" className="btn px-4 py-5 text-sm lg:px-8 lg:py-5 lg:text-lg font-medium text-center">
+            <button
+              type="button"
+              className="btn px-4 py-5 text-sm lg:px-8 lg:py-5 lg:text-lg font-medium text-center"
+              onClick={() => document.getElementById('templates-section')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Try it out now
             </button> 
           </div>

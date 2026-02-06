@@ -48,7 +48,7 @@ const index = () => {
   const scale = SIZE_SCALE[size] || SIZE_SCALE.md;
 
   return (
-    <div className='max-w-[1194px] mx-auto mt-18'>
+    <div id="templates-section" className='max-w-[1194px] mx-auto mt-18'>
 
       <div className="px-5 xl:px-0">
         <h2 className='section-title tracking-wide mb-3'>Modal Card Generator</h2>

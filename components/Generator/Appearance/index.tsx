@@ -25,7 +25,7 @@ const index = () => {
   }
 
   return (
-    <div className={`${appearance ? "" : "opacity-60 bg-red"}`}>
+    <div id="appearance-section" className={`${appearance ? "" : "opacity-60 bg-red"}`}>
       <div className="flex items-center">
         <span className='generator-title'><p className='generator-title-number'>2</p></span>
         <h5 className='generator-title-text'>Appearance <span className='font-primary font-normal text-lg tracking-wide leading-9 text-black'>(Size, color, logo)</span></h5>
