@@ -1,5 +1,5 @@
 import { ModalContextProvider } from "../contexts/ModalContext";
-import { Modal1ContextProvider } from "../contexts/Modal1Context";
+import { ModalCustomizationContextProvider } from "../contexts/ModalCustomizationContext";
 import { ModalLanguageContextProvider } from "../contexts/LanguageContext";
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ModalContextProvider>
         <ModalLanguageContextProvider>
-          <Modal1ContextProvider>
+          <ModalCustomizationContextProvider>
             <Component {...pageProps} />
-          </Modal1ContextProvider>
+          </ModalCustomizationContextProvider>
         </ModalLanguageContextProvider>
       </ModalContextProvider>
     </>
