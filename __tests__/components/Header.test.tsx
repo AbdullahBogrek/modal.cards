@@ -9,8 +9,8 @@ jest.mock('next/link', () => {
 describe('Header', () => {
   it('renders logo and brand name', () => {
     render(<Header />);
-    expect(screen.getByAltText('Modal cards Logo')).toBeInTheDocument();
-    expect(screen.getByText('modal.cards')).toBeInTheDocument();
+    expect(screen.getByAltText('getpopup Logo')).toBeInTheDocument();
+    expect(screen.getByText('getpopup')).toBeInTheDocument();
   });
 
   it('renders navigation links', () => {

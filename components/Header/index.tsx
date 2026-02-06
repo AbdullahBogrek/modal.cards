@@ -12,9 +12,9 @@ const index = () => {
     <>
         <nav className="flex flex-wrap items-center justify-between mx-auto max-w-[1194px] pt-6 px-6 lg:px-0">
             <div className="flex items-center flex-shrink-0 mr-21">
-                <img src="/assets/logo.png" className="mr-2 h-9 sm:h-9" alt="Modal cards Logo" />
+                <img src="https://pub-64bc1fc0a86d4715bc552f7b0ae5d6f8.r2.dev/static/getpopup.png" className="mr-2 h-11 sm:h-11 border border-[#EAEAEA] rounded-lg p-1" alt="getpopup Logo" />
 
-                <span className="self-center text-base font-extrabold whitespace-nowrap">modal.cards</span>
+                <span className="self-center text-xl font-extrabold whitespace-nowrap">getpopup</span>
             </div>
             <div className="block lg:hidden">
                 <button className="flex items-center px-3 py-2 border rounded text-black hover:text-white hover:border-white"

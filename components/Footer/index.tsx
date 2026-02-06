@@ -52,7 +52,7 @@ const index = () => {
         <div className="grid grid-cols-1 mt-16">
           <div className="text-center">
             <div className="flex justify-center mb-3">
-              <img src="/assets/getpopup.svg" className='w-8 h-8' />
+              <img src="https://pub-64bc1fc0a86d4715bc552f7b0ae5d6f8.r2.dev/static/getpopup.png" className='w-8 h-8 border border-[#EAEAEA] rounded-lg p-0.5' />
             </div>
             <h6 className='font-primary font-normal text-black text-sm leading-4 tracking-tight'>Powered by getpopup</h6>
           </div>

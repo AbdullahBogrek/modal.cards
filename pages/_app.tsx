@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
-          title="modal.cards"
+          title="getpopup"
         ></meta>
       </Head>
       <ModalContextProvider>

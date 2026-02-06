@@ -13,7 +13,7 @@ describe('Home Page', () => {
 
   it('renders Header section', () => {
     render(<Home />);
-    expect(screen.getByText('modal.cards')).toBeInTheDocument();
+    expect(screen.getByText('getpopup')).toBeInTheDocument();
   });
 
   it('renders Hero section', () => {
