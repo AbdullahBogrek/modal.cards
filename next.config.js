@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['pub-*.r2.dev'],
+    unoptimized: true,
   },
 }
 
