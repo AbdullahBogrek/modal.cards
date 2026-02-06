@@ -191,7 +191,7 @@ figure {
 }
 
 .setting-code-snippet {
-    @apply bg-[#333333] rounded-lg w-96 h-64 relative mb-3
+    @apply bg-[#333333] rounded-lg w-full max-w-[420px] relative mb-3 flex flex-col
 }
 
 // TEMPLATES

@@ -98,13 +98,14 @@ const index = () => {
           {isClick && (
             <>
               <div className="setting-code-snippet">
-                <pre className='p-4 text-white text-xs font-mono overflow-auto whitespace-pre-wrap break-all max-h-[300px]'>{generatedCode}</pre>
-                <button className='btn font-primary absolute tracking-wide px-4 py-1 rounded-[160px] bottom-[10px] right-[10px]' disabled={!isSettingsEnabled} onClick={handleCopy}>{copied ? 'Copied!' : 'Copy the code'}</button>
+                <pre className='p-4 text-white text-xs font-mono overflow-auto whitespace-pre-wrap break-all max-h-[250px]'>{generatedCode}</pre>
               </div>
 
-              <div className="flex flex-row justify-start items-start">
-                <img src="/assets/warning_sign.svg" className='mr-1' />
-                <p className='w-[340px] font-primary font-normal text-[12px] text-black leading-4'>Copy and paste the embed code above just before the closing "body" tag of your website template file.</p>
+              <button className='btn font-primary tracking-wide px-4 py-2 rounded-[160px] mb-3' disabled={!isSettingsEnabled} onClick={handleCopy}>{copied ? 'Copied!' : 'Copy the code'}</button>
+
+              <div className="flex flex-row items-start gap-2 mb-4">
+                <img src="/assets/warning_sign.svg" className='mt-0.5 flex-shrink-0' />
+                <p className='font-primary font-normal text-xs text-black leading-4'>Copy and paste the embed code above just before the closing <code className='font-mono bg-gray-100 px-1 rounded'>&lt;/body&gt;</code> tag of your website template file.</p>
               </div>
             </>
           )}
