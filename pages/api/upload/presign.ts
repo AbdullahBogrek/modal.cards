@@ -3,7 +3,7 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { r2Client, R2_BUCKET, R2_PUBLIC_URL } from "../../../lib/r2";
 
 export const config = {
-  runtime: 'edge',
+  runtime: 'experimental-edge',
 };
 
 const ALLOWED_TYPES = new Set([
