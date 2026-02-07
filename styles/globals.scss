@@ -163,13 +163,12 @@ figure {
 // Badge
 .hero-badge {
     @apply inline-flex items-center gap-2 px-4 py-2 rounded-full;
-    border: 1px solid rgb(var(--color-primary) / 0.2);
-    background: rgb(var(--color-primary) / 0.05);
+    border: 1px solid rgb(var(--color-border-light));
+    background: rgb(var(--color-surface-alt));
     backdrop-filter: blur(8px);
 }
 .hero-badge-dot {
-    @apply w-2 h-2 rounded-full;
-    background: rgb(var(--color-primary));
+    @apply w-2 h-2 rounded-full bg-green-500;
     animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -238,18 +237,18 @@ figure {
     transition: border-color 0.2s ease;
 }
 .hero-feature-pill:hover {
-    border-color: rgb(var(--color-primary) / 0.4);
+    border-color: rgb(var(--color-text-muted) / 0.4);
 }
 
 // Showcase
 .hero-showcase-container { perspective: 1000px; }
 .hero-showcase-glow {
     @apply absolute inset-0 rounded-full;
-    background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.06) 0%, transparent 70%);
     filter: blur(50px);
 }
 .dark .hero-showcase-glow {
-    background: radial-gradient(ellipse at center, rgba(251, 146, 60, 0.18) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
 }
 
 // Carousel track
@@ -371,11 +370,11 @@ figure {
 }
 .how-it-works-card:hover {
     transform: translateY(-4px);
-    border-color: rgb(var(--color-primary) / 0.3);
+    border-color: rgb(var(--color-text-muted) / 0.3);
 }
 .how-it-works-number {
     @apply font-primary font-bold text-4xl;
-    color: rgb(var(--color-primary) / 0.15);
+    color: rgb(var(--color-text-muted) / 0.15);
 }
 
 // GENERATOR PAGE
@@ -506,12 +505,12 @@ figure {
 }
 .feature-card:hover {
     transform: translateY(-4px);
-    border-color: rgb(var(--color-primary) / 0.3);
+    border-color: rgb(var(--color-text-muted) / 0.3);
 }
 .feature-card-icon {
     @apply w-10 h-10 rounded-xl flex items-center justify-center mb-4;
-    background: rgb(var(--color-primary) / 0.1);
-    color: rgb(var(--color-primary));
+    background: rgb(var(--color-text-muted) / 0.08);
+    color: rgb(var(--color-text));
 }
 
 // FOOTER

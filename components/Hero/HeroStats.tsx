@@ -40,7 +40,7 @@ const HeroStats = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
       <div className="hero-stat-card text-center" ref={stat1.ref}>
-        <p className="font-primary font-bold text-5xl lg:text-6xl text-primary">
+        <p className="font-primary font-bold text-5xl lg:text-6xl text-text">
           {stat1.count}x
         </p>
         <p className="font-secondary font-medium text-base text-text mt-2">
@@ -51,7 +51,7 @@ const HeroStats = () => {
         </p>
       </div>
       <div className="hero-stat-card text-center" ref={stat2.ref}>
-        <p className="font-primary font-bold text-5xl lg:text-6xl text-primary">
+        <p className="font-primary font-bold text-5xl lg:text-6xl text-text">
           {stat2.count}%
         </p>
         <p className="font-secondary font-medium text-base text-text mt-2">
@@ -62,7 +62,7 @@ const HeroStats = () => {
         </p>
       </div>
       <div className="hero-stat-card text-center" ref={stat3.ref}>
-        <p className="font-primary font-bold text-5xl lg:text-6xl text-primary">
+        <p className="font-primary font-bold text-5xl lg:text-6xl text-text">
           {stat3.count}%
         </p>
         <p className="font-secondary font-medium text-base text-text mt-2">

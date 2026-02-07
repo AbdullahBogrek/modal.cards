@@ -6,7 +6,7 @@ const HeroBadge = () => {
     <div className="inline-flex items-center">
       <span className="hero-badge">
         <span className="hero-badge-dot" />
-        <span className="font-secondary font-medium text-sm text-primary">
+        <span className="font-secondary font-medium text-sm text-text">
           {t('hero.badge')}
         </span>
       </span>

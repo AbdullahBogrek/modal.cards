@@ -13,7 +13,7 @@ const HeroFeaturePills = () => {
     <div className="flex flex-wrap gap-3">
       {FEATURES.map(({ key, icon }) => (
         <span key={key} className="hero-feature-pill">
-          <svg className="w-4 h-4 text-primary mr-2" fill="none" stroke="currentColor"
+          <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor"
                strokeWidth="2" viewBox="0 0 24 24">
             {icon === 'check' && (
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

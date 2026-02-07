@@ -11,7 +11,7 @@ const STEPS = [
 ] as const;
 
 const StepIcon = ({ icon }: { icon: string }) => (
-  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+  <svg className="w-6 h-6 text-text" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
     {icon === 'template' && (
       <path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
     )}
@@ -66,7 +66,7 @@ const HowItWorks = () => {
         <FadeIn direction="up" delay={0.3}>
           <div className="text-center">
             <Link href="/generator">
-              <a className="btn hero-cta-primary px-8 py-4 text-base lg:text-lg font-semibold inline-flex items-center">
+              <a className="btn px-8 py-4 text-base lg:text-lg font-semibold inline-flex items-center">
                 {t('howItWorks.cta')}
                 <svg className="ml-2 w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />

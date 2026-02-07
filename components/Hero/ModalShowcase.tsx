@@ -123,7 +123,7 @@ const ModalShowcase = () => {
       {/* Floating micro-stat: no code */}
       <div className="hero-showcase-float-element hero-showcase-float-2 hidden lg:block">
         <div className="hero-showcase-mini-card">
-          <svg className="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
           </svg>
           <span className="font-secondary text-sm font-medium text-text">No code required</span>
@@ -136,7 +136,7 @@ const ModalShowcase = () => {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-primary w-4' : 'bg-border-light hover:bg-text-muted'}`}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === index ? 'bg-text w-4' : 'bg-border-light hover:bg-text-muted'}`}
             aria-label={`Template ${i + 1}`}
           />
         ))}
