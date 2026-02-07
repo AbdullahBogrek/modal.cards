@@ -4,11 +4,11 @@ import Home from '../pages/index';
 describe('Smoke Test', () => {
   it('renders the home page without crashing', () => {
     render(<Home />);
-    expect(screen.getByText('Simple modal card creator')).toBeInTheDocument();
+    expect(screen.getByText(/Turn Every Visitor/)).toBeInTheDocument();
   });
 
-  it('renders the Generator section', () => {
+  it('renders the How It Works section', () => {
     render(<Home />);
-    expect(screen.getByText('Modal Card Generator')).toBeInTheDocument();
+    expect(screen.getAllByText('How It Works').length).toBeGreaterThanOrEqual(1);
   });
 });

@@ -13,22 +13,22 @@ describe('Home Page', () => {
 
   it('renders Header section', () => {
     render(<Home />);
-    expect(screen.getByText('getpopup')).toBeInTheDocument();
+    expect(screen.getAllByText('getpopup').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Hero section', () => {
     render(<Home />);
-    expect(screen.getByText('Simple modal card creator')).toBeInTheDocument();
+    expect(screen.getByText(/Turn Every Visitor/)).toBeInTheDocument();
   });
 
-  it('renders Generator section', () => {
+  it('renders How It Works section', () => {
     render(<Home />);
-    expect(screen.getByText('Modal Card Generator')).toBeInTheDocument();
+    expect(screen.getByText('Four simple steps to create high-converting popups')).toBeInTheDocument();
   });
 
   it('renders Features section', () => {
     render(<Home />);
-    expect(screen.getByText('Conversion & UX ready popups & modals')).toBeInTheDocument();
+    expect(screen.getByText('Why getpopup?')).toBeInTheDocument();
   });
 
   it('renders FAQ section', () => {
@@ -38,13 +38,13 @@ describe('Home Page', () => {
 
   it('renders Footer section', () => {
     render(<Home />);
-    expect(screen.getByText('Build great popups without code')).toBeInTheDocument();
+    expect(screen.getByText(/easiest way to create high-converting popups/)).toBeInTheDocument();
   });
 
   it('all sections render in correct order', () => {
     const { container } = render(<Home />);
     const sections = container.firstChild?.childNodes;
-    // Should have: Header, Hero, Generator, Features, FAQ, Footer
+    // Should have: Header, Hero (2 sections), HowItWorks, Features, FAQ, Footer
     expect(sections?.length).toBeGreaterThanOrEqual(6);
   });
 });
