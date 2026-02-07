@@ -8,7 +8,7 @@ function TestComponent() {
   return (
     <div>
       <span data-testid="locale">{locale}</span>
-      <span data-testid="translated">{t('header.solutions')}</span>
+      <span data-testid="translated">{t('header.howItWorks')}</span>
       <button onClick={() => setLocale('tr')}>Switch to TR</button>
       <button onClick={() => setLocale('en')}>Switch to EN</button>
     </div>
@@ -31,7 +31,7 @@ describe('TranslationContext', () => {
         <TestComponent />
       </TranslationProvider>
     );
-    expect(screen.getByTestId('translated')).toHaveTextContent('Solutions');
+    expect(screen.getByTestId('translated')).toHaveTextContent('How It Works');
   });
 
   it('switches to Turkish locale', async () => {
@@ -45,7 +45,7 @@ describe('TranslationContext', () => {
     await user.click(screen.getByText('Switch to TR'));
 
     expect(screen.getByTestId('locale')).toHaveTextContent('tr');
-    expect(screen.getByTestId('translated')).toHaveTextContent('Çözümler');
+    expect(screen.getByTestId('translated')).toHaveTextContent('Nasıl Çalışır');
   });
 
   it('switches back to English from Turkish', async () => {
@@ -60,7 +60,7 @@ describe('TranslationContext', () => {
     await user.click(screen.getByText('Switch to EN'));
 
     expect(screen.getByTestId('locale')).toHaveTextContent('en');
-    expect(screen.getByTestId('translated')).toHaveTextContent('Solutions');
+    expect(screen.getByTestId('translated')).toHaveTextContent('How It Works');
   });
 
   it('returns the key itself for missing translations', () => {

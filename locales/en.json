@@ -1,31 +1,31 @@
 {
   "header": {
-    "solutions": "Solutions",
-    "productTour": "Product Tour",
-    "showcase": "Showcase",
-    "pricing": "Pricing",
-    "signIn": "Sign in",
-    "tryForFree": "Try for free"
+    "howItWorks": "How It Works",
+    "features": "Features",
+    "faq": "FAQ",
+    "templates": "Templates"
   },
   "hero": {
-    "title": "Simple modal card creator",
-    "subtitle": "Create stunning popup modals for your website in minutes. Choose a template, customize it visually, and embed the generated code — no development skills required.",
-    "cta": "Try it out now",
-    "feature1": "Free and paid plans",
-    "feature2": "Setup in minutes",
-    "feature3": "No credit card required*",
-    "stat1Value": "3x",
-    "stat1Label1": "Increase",
-    "stat1Label2": "Conversion Rate",
-    "stat2Value": "120%",
-    "stat2Label1": "Email",
-    "stat2Label2": "Subscribers",
-    "stat3Value": "390%",
-    "stat3Label1": "More Customer",
-    "stat3Label2": "Engagement",
-    "tagline1": "getpopup meets",
-    "tagline2": "all your business",
-    "tagline3": "needs."
+    "badge": "The Easiest Popup Builder",
+    "headlinePre": "Turn Every Visitor Into a ",
+    "headlineWord1": "Customer",
+    "headlineWord2": "Subscriber",
+    "headlineWord3": "Member",
+    "headlineWord4": "Buyer",
+    "headlinePost": "",
+    "subtitle": "Build high-converting popups in minutes. No code. No designers. Just results.",
+    "ctaPrimary": "Start Building Free",
+    "ctaSecondary": "See how it works",
+    "socialProof": "Loved by 10,000+ marketers",
+    "feature1": "Forever free plan",
+    "feature2": "Live in 2 minutes",
+    "feature3": "No credit card needed",
+    "stat1Label": "Higher Conversion",
+    "stat1Desc": "Average increase in conversion rate for sites using getpopup",
+    "stat2Label": "More Email Signups",
+    "stat2Desc": "Growth in email subscriber lists within the first month",
+    "stat3Label": "Better Engagement",
+    "stat3Desc": "Boost in customer interaction with targeted popups"
   },
   "generator": {
     "title": "Modal Card Generator",
@@ -97,13 +97,20 @@
     "description": "Update the template quickly and easily, and embed the code you created in your own code."
   },
   "features": {
-    "title": "Conversion & UX ready popups & modals",
-    "pixelPerfect": "Pixel Perfect",
-    "pixelPerfectDesc": "Beautifully crafted modal templates that look stunning on every screen size and device.",
-    "conversionReady": "Conversion Ready",
-    "conversionReadyDesc": "Optimized layouts and CTA placements designed to maximize your conversion rates.",
-    "modernUseful": "Modern & Useful",
-    "modernUsefulDesc": "Clean, contemporary designs with smart features that enhance your user experience."
+    "title": "Why getpopup?",
+    "subtitle": "Everything you need to create popups that convert",
+    "smartTargeting": "Smart Targeting",
+    "smartTargetingDesc": "Show the right popup to the right visitor with 26+ targeting triggers including exit intent, scroll depth, and traffic source.",
+    "visualEditor": "Visual Editor",
+    "visualEditorDesc": "Design stunning popups with our drag-and-drop editor. No coding skills required.",
+    "lightweight": "Lightweight",
+    "lightweightDesc": "Our embed script is tiny and async-loaded. Zero impact on your site speed.",
+    "mobileReady": "Mobile Ready",
+    "mobileReadyDesc": "Every template is fully responsive and optimized for mobile, tablet, and desktop.",
+    "webhooks": "Webhooks & APIs",
+    "webhooksDesc": "Send form data to any platform. Connect with your CRM, email tool, or custom backend.",
+    "multiLanguage": "Multi-language",
+    "multiLanguageDesc": "Target visitors by browser language and create localized popup experiences."
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -120,16 +127,33 @@
     "q6": "Do the modals work on mobile devices?",
     "a6": "Absolutely. All our modal templates are fully responsive and work perfectly on desktop, tablet, and mobile devices."
   },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Four simple steps to create high-converting popups",
+    "step1Title": "Pick a Template",
+    "step1Desc": "Choose from 12 professionally designed modal templates that fit your brand.",
+    "step2Title": "Customize",
+    "step2Desc": "Adjust colors, fonts, images and content to match your website perfectly.",
+    "step3Title": "Set Rules",
+    "step3Desc": "Define when and where your popup appears with 26+ targeting triggers.",
+    "step4Title": "Copy & Embed",
+    "step4Desc": "Get a ready-to-use embed code and paste it into your website. Done.",
+    "cta": "Start Building"
+  },
+  "generatorPage": {
+    "backToHome": "Back to Home"
+  },
   "footer": {
-    "title": "Build great popups without code",
-    "targeting": "Targeting Options",
-    "targetingDesc": "Target +26 triggers to your visitors",
-    "noCode": "No-Code",
-    "noCodeDesc": "No code required while you're creating a popup",
-    "integrations": "Integrations",
-    "integrationsDesc": "Integrated with your marketing and CRM platforms",
-    "performance": "Performance",
-    "performanceDesc": "Don't worry about speed and Amazon AWS resources",
-    "poweredBy": "Powered by getpopup"
+    "description": "The easiest way to create high-converting popups for your website.",
+    "product": "Product",
+    "resources": "Resources",
+    "templates": "Templates",
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "documentation": "Documentation",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "copyright": "© 2026 getpopup. All rights reserved."
   }
 }

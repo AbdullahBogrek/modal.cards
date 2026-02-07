@@ -1,31 +1,31 @@
 {
   "header": {
-    "solutions": "Çözümler",
-    "productTour": "Ürün Turu",
-    "showcase": "Vitrin",
-    "pricing": "Fiyatlandırma",
-    "signIn": "Giriş Yap",
-    "tryForFree": "Ücretsiz Dene"
+    "howItWorks": "Nasıl Çalışır",
+    "features": "Özellikler",
+    "faq": "SSS",
+    "templates": "Şablonlar"
   },
   "hero": {
-    "title": "Basit modal kart oluşturucu",
-    "subtitle": "Dakikalar içinde web siteniz için etkileyici popup modalları oluşturun. Bir şablon seçin, görsel olarak özelleştirin ve oluşturulan kodu yerleştirin — geliştirme becerisi gerekmez.",
-    "cta": "Hemen deneyin",
-    "feature1": "Ücretsiz ve ücretli planlar",
-    "feature2": "Dakikalar içinde kurulum",
-    "feature3": "Kredi kartı gerekmez*",
-    "stat1Value": "3x",
-    "stat1Label1": "Artış",
-    "stat1Label2": "Dönüşüm Oranı",
-    "stat2Value": "120%",
-    "stat2Label1": "E-posta",
-    "stat2Label2": "Aboneleri",
-    "stat3Value": "390%",
-    "stat3Label1": "Daha Fazla Müşteri",
-    "stat3Label2": "Etkileşimi",
-    "tagline1": "getpopup tüm",
-    "tagline2": "iş ihtiyaçlarınızı",
-    "tagline3": "karşılar."
+    "badge": "En Kolay Popup Oluşturucu",
+    "headlinePre": "Her Ziyaretçiyi ",
+    "headlineWord1": "Müşteriye",
+    "headlineWord2": "Aboneye",
+    "headlineWord3": "Üyeye",
+    "headlineWord4": "Alıcıya",
+    "headlinePost": " Dönüştürün",
+    "subtitle": "Dakikalar içinde yüksek dönüşümlü popup'lar oluşturun. Kod yok. Tasarımcı yok. Sadece sonuç.",
+    "ctaPrimary": "Ücretsiz Başlayın",
+    "ctaSecondary": "Nasıl çalıştığını görün",
+    "socialProof": "10.000+ pazarlamacı tarafından tercih ediliyor",
+    "feature1": "Sınırsız ücretsiz plan",
+    "feature2": "2 dakikada yayında",
+    "feature3": "Kredi kartı gerekmez",
+    "stat1Label": "Daha Yüksek Dönüşüm",
+    "stat1Desc": "getpopup kullanan sitelerde ortalama dönüşüm oranı artışı",
+    "stat2Label": "Daha Fazla E-posta Abonesi",
+    "stat2Desc": "İlk ay içinde e-posta abone listelerindeki büyüme",
+    "stat3Label": "Daha İyi Etkileşim",
+    "stat3Desc": "Hedefli popup'larla müşteri etkileşiminde artış"
   },
   "generator": {
     "title": "Modal Kart Oluşturucu",
@@ -97,13 +97,20 @@
     "description": "Şablonu hızlıca güncelleyin ve oluşturduğunuz kodu kendi web sitenize yerleştirin."
   },
   "features": {
-    "title": "Dönüşüm ve UX odaklı popup'lar ve modallar",
-    "pixelPerfect": "Piksel Mükemmelliği",
-    "pixelPerfectDesc": "Her ekran boyutunda ve cihazda harika görünen, özenle tasarlanmış modal şablonları.",
-    "conversionReady": "Dönüşüme Hazır",
-    "conversionReadyDesc": "Dönüşüm oranlarınızı artırmak için optimize edilmiş düzenler ve CTA yerleşimleri.",
-    "modernUseful": "Modern ve Kullanışlı",
-    "modernUsefulDesc": "Kullanıcı deneyiminizi geliştiren akıllı özelliklerle temiz, çağdaş tasarımlar."
+    "title": "Neden getpopup?",
+    "subtitle": "Dönüşüm sağlayan popup'lar oluşturmak için ihtiyacınız olan her şey",
+    "smartTargeting": "Akıllı Hedefleme",
+    "smartTargetingDesc": "Çıkış niyeti, kaydırma derinliği ve trafik kaynağı dahil 26+ hedefleme tetikleyicisi ile doğru ziyaretçiye doğru popup'ı gösterin.",
+    "visualEditor": "Görsel Editör",
+    "visualEditorDesc": "Sürükle-bırak editörümüzle etkileyici popup'lar tasarlayın. Kodlama bilgisi gerekmez.",
+    "lightweight": "Hafif",
+    "lightweightDesc": "Embed kodumuz küçük ve asenkron yüklenir. Site hızınıza sıfır etki.",
+    "mobileReady": "Mobil Uyumlu",
+    "mobileReadyDesc": "Her şablon tamamen duyarlıdır ve mobil, tablet ve masaüstü için optimize edilmiştir.",
+    "webhooks": "Webhook'lar ve API'ler",
+    "webhooksDesc": "Form verilerini herhangi bir platforma gönderin. CRM, e-posta aracınız veya özel backend'inize bağlanın.",
+    "multiLanguage": "Çoklu Dil",
+    "multiLanguageDesc": "Ziyaretçileri tarayıcı diline göre hedefleyin ve yerelleştirilmiş popup deneyimleri oluşturun."
   },
   "faq": {
     "title": "Sıkça Sorulan Sorular",
@@ -120,16 +127,33 @@
     "q6": "Modallar mobil cihazlarda çalışıyor mu?",
     "a6": "Kesinlikle. Tüm modal şablonlarımız tamamen duyarlıdır ve masaüstü, tablet ve mobil cihazlarda mükemmel çalışır."
   },
+  "howItWorks": {
+    "title": "Nasıl Çalışır",
+    "subtitle": "Yüksek dönüşümlü popup'lar oluşturmak için dört basit adım",
+    "step1Title": "Şablon Seç",
+    "step1Desc": "Markanıza uygun 12 profesyonel modal şablonundan birini seçin.",
+    "step2Title": "Özelleştir",
+    "step2Desc": "Renkleri, fontları, görselleri ve içeriği web sitenize mükemmel uyacak şekilde ayarlayın.",
+    "step3Title": "Kuralları Belirle",
+    "step3Desc": "26+ hedefleme tetikleyicisiyle popup'ınızın ne zaman ve nerede görüneceğini tanımlayın.",
+    "step4Title": "Kopyala ve Yerleştir",
+    "step4Desc": "Hazır embed kodunu alın ve web sitenize yapıştırın. Bitti.",
+    "cta": "Oluşturmaya Başla"
+  },
+  "generatorPage": {
+    "backToHome": "Ana Sayfaya Dön"
+  },
   "footer": {
-    "title": "Kodsuz harika popup'lar oluşturun",
-    "targeting": "Hedefleme Seçenekleri",
-    "targetingDesc": "Ziyaretçilerinize +26 tetikleyici hedefleyin",
-    "noCode": "Kodsuz",
-    "noCodeDesc": "Popup oluştururken kod yazmaya gerek yok",
-    "integrations": "Entegrasyonlar",
-    "integrationsDesc": "Pazarlama ve CRM platformlarınızla entegre",
-    "performance": "Performans",
-    "performanceDesc": "Hız ve Amazon AWS kaynakları konusunda endişelenmeyin",
-    "poweredBy": "getpopup tarafından desteklenmektedir"
+    "description": "Web siteniz için yüksek dönüşümlü popup'lar oluşturmanın en kolay yolu.",
+    "product": "Ürün",
+    "resources": "Kaynaklar",
+    "templates": "Şablonlar",
+    "features": "Özellikler",
+    "howItWorks": "Nasıl Çalışır",
+    "pricing": "Fiyatlandırma",
+    "documentation": "Dokümantasyon",
+    "faq": "SSS",
+    "blog": "Blog",
+    "copyright": "© 2026 getpopup. Tüm hakları saklıdır."
   }
 }

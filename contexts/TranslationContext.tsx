@@ -1,8 +1,28 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import en from '../locales/en.json';
 import tr from '../locales/tr.json';
 
 export type Locale = 'en' | 'tr';
+
+const STORAGE_KEY = 'getpopup-locale';
+const SUPPORTED_LOCALES: Locale[] = ['en', 'tr'];
+
+function detectLocale(): Locale {
+  // 1. Check localStorage
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && SUPPORTED_LOCALES.includes(stored as Locale)) {
+      return stored as Locale;
+    }
+    // 2. Check browser language
+    const browserLang = navigator.language?.split('-')[0];
+    if (browserLang && SUPPORTED_LOCALES.includes(browserLang as Locale)) {
+      return browserLang as Locale;
+    }
+  }
+  // 3. Default to English
+  return 'en';
+}
 
 interface TranslationContextProps {
   locale: Locale;
@@ -23,7 +43,19 @@ export function useTranslation() {
 }
 
 export const TranslationProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>('en');
+  const [locale, setLocaleState] = useState<Locale>('en');
+
+  // Detect locale on mount (client-side only)
+  useEffect(() => {
+    setLocaleState(detectLocale());
+  }, []);
+
+  const setLocale = useCallback((newLocale: Locale) => {
+    setLocaleState(newLocale);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY, newLocale);
+    }
+  }, []);
 
   const t = useCallback((key: string): string => {
     const keys = key.split('.');
