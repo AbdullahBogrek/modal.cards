@@ -4,64 +4,108 @@ import { useTranslation } from '../../contexts/TranslationContext';
 import LanguageSwitcher from '../LanguageSwitcher';
 import ThemeToggle from '../ThemeToggle';
 
-const index = () => {
-  const [active, setActive] = useState<boolean>(false);
+const NAV_LINKS = [
+  { key: 'header.howItWorks', href: '#how-it-works' },
+  { key: 'header.features', href: '#features' },
+  { key: 'header.faq', href: '#faq' },
+  { key: 'header.templates', href: '/generator', isPage: true },
+];
+
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
 
-  const handleClick = () => {
-    setActive(!active);
-  };
-
   return (
-    <>
-        <nav className="flex flex-wrap items-center justify-between pt-6 px-6 md:px-12 lg:px-16 xl:px-20">
-            <div className="flex items-center flex-shrink-0 mr-21">
-                <img src="https://cdn.getpopup.site/static/getpopup.png" onError={(e) => { (e.target as HTMLImageElement).src = '/assets/logo.png'; }} className="mr-2 h-11 sm:h-11 border border-border-light rounded-lg p-1" alt="getpopup Logo" />
+    <nav className="flex items-center justify-between py-4 px-6 md:px-12 lg:px-16 xl:px-20">
+      {/* Logo */}
+      <Link href="/">
+        <a className="flex items-center gap-2 flex-shrink-0">
+          <img
+            src="https://cdn.getpopup.site/static/getpopup.png"
+            onError={(e) => { (e.target as HTMLImageElement).src = '/assets/logo.png'; }}
+            className="h-9 border border-border-light rounded-lg p-0.5"
+            alt="getpopup Logo"
+          />
+          <span className="text-lg font-primary font-bold text-text">getpopup</span>
+        </a>
+      </Link>
 
-                <span className="self-center text-xl font-extrabold whitespace-nowrap text-text">getpopup</span>
-            </div>
-            <div className="block lg:hidden">
-                <button className="flex items-center px-3 py-2 border rounded text-text hover:text-white hover:border-white"
-                    onClick={handleClick}
+      {/* Nav links — centered on desktop */}
+      <div className="hidden lg:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
+        {NAV_LINKS.map((link) =>
+          link.isPage ? (
+            <Link key={link.key} href={link.href}>
+              <a className="text-sm font-secondary font-medium text-text-secondary hover:text-text transition-colors">
+                {t(link.key)}
+              </a>
+            </Link>
+          ) : (
+            <a
+              key={link.key}
+              href={link.href}
+              className="text-sm font-secondary font-medium text-text-secondary hover:text-text transition-colors"
+            >
+              {t(link.key)}
+            </a>
+          )
+        )}
+      </div>
+
+      {/* Controls — right side on desktop */}
+      <div className="hidden lg:flex items-center gap-2">
+        <LanguageSwitcher />
+        <ThemeToggle />
+      </div>
+
+      {/* Mobile menu toggle */}
+      <button
+        className="lg:hidden p-2 rounded-lg text-text hover:bg-surface-alt transition-colors"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        {menuOpen ? (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </button>
+
+      {/* Mobile menu dropdown */}
+      {menuOpen && (
+        <div className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-0 right-0 bg-surface px-6 py-4 border-b border-border-light z-40">
+          {NAV_LINKS.map((link) =>
+            link.isPage ? (
+              <Link key={link.key} href={link.href}>
+                <a
+                  className="text-sm font-secondary font-medium text-text-secondary hover:text-text transition-colors"
+                  onClick={() => setMenuOpen(false)}
                 >
-                    <img src="/assets/menu.svg"/>
-                </button>
-            </div>
-            <div className={`${
-                    active ? '' : 'hidden'
-                } lg:flex-grow w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-center`}>
-                <div className="text-sm lg:flex-grow mt-5 lg:mt-0">
-                    <Link href='/'>
-                        <a href="#" className="nav-link-dropdown">
-                            <span>{t('header.solutions')}</span> 
-                            <i className="ml-1">
-                                <img src='/assets/down.svg'/>
-                            </i>
-                        </a>
-                    </Link>
-
-                    <Link href='/'>
-                        <a href="#" className="nav-link mr-6">{t('header.productTour')}</a>
-                    </Link>
-
-                    <Link href='/'>
-                        <a href="#" className="nav-link mr-6">{t('header.showcase')}</a>
-                    </Link>
-
-                    <Link href='/'>
-                        <a href="#" className="nav-link">{t('header.pricing')}</a>
-                    </Link>
-                </div>
-                <div className='mt-5 lg:mt-0 flex items-center gap-4'>
-                    <ThemeToggle />
-                    <LanguageSwitcher />
-                    <a href="#" className="inline-block mt-4 lg:mt-0 text-text font-secondary hover:text-primary font-medium pr-8 text-base">{t('header.signIn')}</a>
-                    <button type="button" className="btn text-base px-5 py-2">{t('header.tryForFree')}</button>
-                </div>
-            </div>
-        </nav>
-    </>
+                  {t(link.key)}
+                </a>
+              </Link>
+            ) : (
+              <a
+                key={link.key}
+                href={link.href}
+                className="text-sm font-secondary font-medium text-text-secondary hover:text-text transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                {t(link.key)}
+              </a>
+            )
+          )}
+          <div className="flex items-center gap-2 pt-2 border-t border-border-light w-full">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 
-export default index;
+export default Header;

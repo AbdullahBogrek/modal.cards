@@ -15,36 +15,28 @@ describe('Header', () => {
 
   it('renders navigation links', () => {
     render(<Header />);
-    expect(screen.getByText('Solutions')).toBeInTheDocument();
-    expect(screen.getByText('Product Tour')).toBeInTheDocument();
-    expect(screen.getByText('Showcase')).toBeInTheDocument();
-    expect(screen.getByText('Pricing')).toBeInTheDocument();
+    expect(screen.getByText('How It Works')).toBeInTheDocument();
+    expect(screen.getByText('Features')).toBeInTheDocument();
+    expect(screen.getByText('FAQ')).toBeInTheDocument();
+    expect(screen.getByText('Templates')).toBeInTheDocument();
   });
 
-  it('renders sign in and CTA buttons', () => {
+  it('does not render auth buttons', () => {
     render(<Header />);
-    expect(screen.getByText('Sign in')).toBeInTheDocument();
-    expect(screen.getByText('Try for free')).toBeInTheDocument();
+    expect(screen.queryByText('Sign in')).not.toBeInTheDocument();
+    expect(screen.queryByText('Try for free')).not.toBeInTheDocument();
   });
 
   it('toggles mobile menu on hamburger click', async () => {
     const user = userEvent.setup();
-    const { container } = render(<Header />);
-    const menuButton = container.querySelector('button img[src="/assets/menu.svg"]')!.closest('button')!;
+    render(<Header />);
+    const menuButton = screen.getByRole('button', { name: /toggle menu/i });
 
-    // The wrapping div contains 'hidden' class when menu is closed
-    // Walk up from "Solutions" text to find the div with w-full class that has hidden
-    const getNavWrapper = () => {
-      let el: HTMLElement | null = screen.getByText('Solutions');
-      while (el && !el.classList.contains('w-full')) {
-        el = el.parentElement;
-      }
-      return el;
-    };
-
-    expect(getNavWrapper()).toHaveClass('hidden');
+    // Before click: only desktop nav links (1 instance each)
+    expect(screen.getAllByText('How It Works')).toHaveLength(1);
 
     await user.click(menuButton);
-    expect(getNavWrapper()).not.toHaveClass('hidden');
+    // After click: desktop + mobile nav links (2 instances each)
+    expect(screen.getAllByText('How It Works')).toHaveLength(2);
   });
 });
