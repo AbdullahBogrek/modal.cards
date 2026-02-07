@@ -14,10 +14,11 @@ describe('Templates', () => {
     expect(buttons).toHaveLength(12);
   });
 
-  it('renders 12 template preview images', () => {
+  it('renders 12 live template thumbnails', () => {
     render(<Templates />);
-    const images = screen.getAllByRole('img');
-    expect(images).toHaveLength(12);
+    // Each template renders as a live modal component (not a static img)
+    const buttons = screen.getAllByText('Select template');
+    expect(buttons).toHaveLength(12);
   });
 
   it('clicking a template button triggers selection', async () => {

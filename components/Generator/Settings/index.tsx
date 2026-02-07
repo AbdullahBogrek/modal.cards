@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useModalContext } from "../../../contexts/ModalContext";
 import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 import { generateEmbedCode } from "../../../lib/generateEmbedCode";
@@ -9,6 +9,7 @@ const index = () => {
   const [isClick, setIsClick] = useState<boolean>(false)
   const [generatedCode, setGeneratedCode] = useState<string>('')
   const [copied, setCopied] = useState<boolean>(false)
+  const codeRef = useRef<HTMLDivElement>(null)
 
   const { id } = useModalContext()
   const customization = useModalCustomizationContext();
@@ -53,6 +54,9 @@ const index = () => {
     });
     setGeneratedCode(code);
     setIsClick(true);
+    setTimeout(() => {
+      codeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
   }
 
   const handleCopy = async () => {
@@ -100,7 +104,7 @@ const index = () => {
 
           {isClick && (
             <>
-              <div className="setting-code-snippet">
+              <div ref={codeRef} className="setting-code-snippet">
                 <pre className='p-4 text-white text-xs font-mono overflow-auto whitespace-pre-wrap break-all max-h-[250px]'>{generatedCode}</pre>
               </div>
 

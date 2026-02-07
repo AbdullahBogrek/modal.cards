@@ -44,7 +44,7 @@ export const BASE_DEFAULTS: ModalCustomizationValues = {
   size: "md",
   position: "center",
   textColor: "#000000",
-  buttonColor: "#7D4AEA",
+  buttonColor: "#000000",
   placeholderColor: "#000000",
   borderColor: "#D2DAE3",
   backgroundColor: "#FFFFFF",
@@ -128,7 +128,7 @@ const TEMPLATE_OVERRIDES: Record<number, Partial<ModalCustomizationValues>> = {
     borderColor: "#EAEAEA",
   },
   7: {
-    backgroundColor: "#7D4AEA",
+    backgroundColor: "#F97316",
     textColor: "#FFFFFF",
     buttonColor: "#FFFFFF",
     title: "Hi, stranger",
@@ -138,7 +138,7 @@ const TEMPLATE_OVERRIDES: Record<number, Partial<ModalCustomizationValues>> = {
     borderColor: "#EAEAEA",
   },
   8: {
-    backgroundColor: "#7D4AEA",
+    backgroundColor: "#F97316",
     textColor: "#FFFFFF",
     buttonColor: "#FFFFFF",
     title: "Subscribe to our newsletter",
@@ -189,7 +189,7 @@ const TEMPLATE_OVERRIDES: Record<number, Partial<ModalCustomizationValues>> = {
     borderColor: "#EAEAEA",
   },
   13: {
-    backgroundColor: "#7D4AEA",
+    backgroundColor: "#F97316",
     textColor: "#FFFFFF",
     buttonColor: "rgba(0,0,0,0.1)",
     title: "Welcome to talk",

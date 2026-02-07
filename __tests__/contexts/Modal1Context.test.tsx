@@ -42,7 +42,7 @@ describe('ModalCustomizationContext', () => {
     expect(screen.getByTestId('size')).toHaveTextContent('md');
     expect(screen.getByTestId('position')).toHaveTextContent('center');
     expect(screen.getByTestId('textColor')).toHaveTextContent('#000000');
-    expect(screen.getByTestId('buttonColor')).toHaveTextContent('#7D4AEA');
+    expect(screen.getByTestId('buttonColor')).toHaveTextContent('#000000');
     expect(screen.getByTestId('backgroundColor')).toHaveTextContent('#FFFFFF');
     expect(screen.getByTestId('title')).toHaveTextContent('');
     expect(screen.getByTestId('subtitle')).toHaveTextContent('');
@@ -67,7 +67,7 @@ describe('ModalCustomizationContext', () => {
     const user = userEvent.setup();
     render(<ModalCustomizationContextProvider><TestConsumer /></ModalCustomizationContextProvider>);
     await user.click(screen.getByText('loadTemplate7'));
-    expect(screen.getByTestId('backgroundColor')).toHaveTextContent('#7D4AEA');
+    expect(screen.getByTestId('backgroundColor')).toHaveTextContent('#F97316');
     expect(screen.getByTestId('textColor')).toHaveTextContent('#FFFFFF');
     expect(screen.getByTestId('buttonColor')).toHaveTextContent('#FFFFFF');
     expect(screen.getByTestId('title')).toHaveTextContent('Hi, stranger');

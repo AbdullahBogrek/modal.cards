@@ -67,6 +67,30 @@ export function useModalCustomizationContext() {
   return useContext(ModalCustomizationContext);
 }
 
+/** Read-only provider that supplies a specific template's defaults (for thumbnails). */
+export const TemplateDefaultsProvider = ({ templateId, children }: { templateId: number; children: ReactNode }) => {
+  const defaults = getTemplateDefaults(templateId);
+  const noopSetters = {
+    setSize: noop, setPosition: noop, setTextColor: noop, setButtonColor: noop,
+    setPlaceholderColor: noop, setBorderColor: noop, setBackgroundColor: noop, setLogo: noop,
+    setTitle: noop, setSubtitle: noop, setBodyText: noop,
+    setInputPlaceholder1: noop, setInputPlaceholder2: noop,
+    setButton1: noop, setButton2: noop, setImage: noop,
+    setLinkText1: noop, setLinkText2: noop, setPrivacyText: noop,
+    setVisitorDevice: { setIsActive: noop, setDesktop: noop, setMobile: noop },
+    setXSeconds: noop, setXSecondsActive: noop, setXScroll: noop, setXScrollActive: noop,
+    setTrafficSource: noop, setTrafficSourceActive: noop,
+    setBrowserLanguage: noop, setBrowserLanguageActive: noop, setExitIntent: noop,
+    setWebhookUrl: noop, setSendFormSubmission: noop, setSendClickData: noop,
+    loadTemplateDefaults: noop,
+  };
+  return (
+    <ModalCustomizationContext.Provider value={{ ...defaults, ...noopSetters } as IModalCustomizationContext}>
+      {children}
+    </ModalCustomizationContext.Provider>
+  );
+};
+
 type Props = { children: ReactNode };
 
 export const ModalCustomizationContextProvider = ({ children }: Props) => {

@@ -13,60 +13,51 @@ describe('Generator', () => {
     expect(screen.getByText(/Build high-converting popup modals/)).toBeInTheDocument();
   });
 
-  it('shows CardPlaceholder when no template is selected (id=0)', () => {
-    render(<Generator />);
-    expect(screen.getByText('Please select a template to create a modal.')).toBeInTheDocument();
-  });
-
   it('renders Templates section', () => {
     render(<Generator />);
     expect(screen.getAllByText('Choose your template').length).toBeGreaterThanOrEqual(1);
   });
 
-  it('renders Appearance section', () => {
+  it('hides wizard steps when no template is selected', () => {
     render(<Generator />);
-    expect(screen.getAllByText(/Appearance/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByText(/Appearance/)).not.toBeInTheDocument();
+    expect(screen.queryByText('Content')).not.toBeInTheDocument();
+    expect(screen.queryByText('Targeting')).not.toBeInTheDocument();
+    expect(screen.queryByText('Settings')).not.toBeInTheDocument();
   });
 
-  it('renders Content section', () => {
-    render(<Generator />);
-    expect(screen.getAllByText('Content').length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('renders Targeting section', () => {
-    render(<Generator />);
-    expect(screen.getAllByText('Targeting').length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('renders Settings section', () => {
-    render(<Generator />);
-    expect(screen.getAllByText('Settings').length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('replaces CardPlaceholder with Modal1 when template 1 is selected', async () => {
+  it('shows wizard steps after selecting a template', async () => {
     const user = userEvent.setup();
     render(<Generator />);
 
-    // Select template 1
     const selectButtons = screen.getAllByText('Select template');
     await user.click(selectButtons[0]);
 
-    // CardPlaceholder should be gone
-    expect(screen.queryByText('Please select a template to create a modal.')).not.toBeInTheDocument();
-    // Modal1 should appear with its default content
-    expect(screen.getByText('Security Code')).toBeInTheDocument();
+    expect(screen.getAllByText(/Appearance/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Content').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Targeting').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Settings').length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('shows modal preview when template 1 is selected', async () => {
+    const user = userEvent.setup();
+    render(<Generator />);
+
+    const selectButtons = screen.getAllByText('Select template');
+    await user.click(selectButtons[0]);
+
+    // Modal1 appears in both thumbnail and preview
+    expect(screen.getAllByText('Security Code').length).toBeGreaterThanOrEqual(2);
   });
 
   it('shows different modal when different template is selected', async () => {
     const user = userEvent.setup();
     render(<Generator />);
 
-    // Select template 2
     const selectButtons = screen.getAllByText('Select template');
     await user.click(selectButtons[1]);
 
-    expect(screen.queryByText('Please select a template to create a modal.')).not.toBeInTheDocument();
-    // Modal2 reads from context — loadTemplateDefaults(2) sets "Install local now"
-    expect(screen.getByText('Install local now')).toBeInTheDocument();
+    // Modal2 appears in both thumbnail and preview
+    expect(screen.getAllByText('Install local now').length).toBeGreaterThanOrEqual(2);
   });
 });

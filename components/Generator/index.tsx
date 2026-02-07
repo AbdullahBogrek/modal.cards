@@ -5,7 +5,6 @@ import Appearance from "./Appearance"
 import Content from "./Content"
 import Targeting from "./Targeting"
 import Settings from "./Settings"
-import CardPlaceholder from "./CardPlaceholder"
 import WizardProgress from "./WizardProgress"
 
 import Modal1 from "../Modals/Modal1"
@@ -51,18 +50,22 @@ const index = () => {
   const scale = SIZE_SCALE[size] || SIZE_SCALE.md;
 
   return (
-    <div id="templates-section" className='max-w-[1400px] mx-auto mt-18 px-6 xl:px-8'>
+    <div id="templates-section" className='max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 xl:px-20'>
 
-      <div className="px-0">
-        <h2 className='section-title tracking-wide mb-3'>{t('generator.title')}</h2>
-        <h4 className='max-w-[460px] w-full font-primary font-normal text-base tracking-tight text-text-secondary'>{t('generator.subtitle')}</h4>
+      {/* Compact title */}
+      <div className="pt-6 pb-4 border-b border-border-light mb-6">
+        <h2 className='font-primary font-bold text-2xl text-text mb-1'>{t('generator.title')}</h2>
+        <p className='font-primary font-normal text-sm text-text-secondary'>{t('generator.subtitle')}</p>
       </div>
 
-      <div className="mt-24">
-        <Templates />
-        <div className='px-0 mt-18'>
-          <div className="flex flex-col lg:flex-row justify-center">
-            <div className="w-full lg:w-1/3 mr-20">
+      {/* Templates - immediately visible */}
+      <Templates />
+
+      {/* Wizard + Preview — only visible after selecting a template */}
+      {id !== 0 && (
+        <div className='mt-8 animate-fade-in-up'>
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-1/3">
               <WizardProgress />
               <Appearance />
               <Content />
@@ -70,26 +73,20 @@ const index = () => {
               <Settings />
             </div>
 
-            <div className="w-full lg:w-2/3 h-[700px] sticky top-10 overflow-hidden bg-surface-elevated rounded-xl border border-border-light">
-              { id === 0 ? (
-                <div className="flex items-center justify-center h-full">
-                  <CardPlaceholder />
+            <div className="w-full lg:w-2/3 h-[700px] sticky top-4 overflow-hidden bg-surface-elevated rounded-xl border border-border-light">
+              <div
+                key={id}
+                className="flex w-full h-full p-6 animate-fade-in-none"
+                style={posStyle}
+              >
+                <div style={{ transform: `scale(${scale})`, transformOrigin: `${posStyle.alignItems === 'flex-start' ? 'top' : posStyle.alignItems === 'flex-end' ? 'bottom' : 'center'} ${posStyle.justifyContent === 'flex-start' ? 'left' : posStyle.justifyContent === 'flex-end' ? 'right' : 'center'}` }}>
+                  {card[id - 1]}
                 </div>
-              ) : (
-                <div
-                  key={id}
-                  className="flex w-full h-full p-6 animate-fade-in-none"
-                  style={posStyle}
-                >
-                  <div style={{ transform: `scale(${scale})`, transformOrigin: `${posStyle.alignItems === 'flex-start' ? 'top' : posStyle.alignItems === 'flex-end' ? 'bottom' : 'center'} ${posStyle.justifyContent === 'flex-start' ? 'left' : posStyle.justifyContent === 'flex-end' ? 'right' : 'center'}` }}>
-                    {card[id - 1]}
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
