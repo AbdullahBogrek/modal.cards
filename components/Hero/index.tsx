@@ -1,87 +1,70 @@
 import { useTranslation } from '../../contexts/TranslationContext';
 import FadeIn from '../animations/FadeIn';
-import Card from "./Card";
+import HeroBadge from './HeroBadge';
+import HeroCTA from './HeroCTA';
+import HeroFeaturePills from './HeroFeaturePills';
+import ModalShowcase from './ModalShowcase';
+import HeroStats from './HeroStats';
+import RotatingText from './RotatingText';
 
-const index = () => {
+const Hero = () => {
   const { t } = useTranslation();
 
   return (
     <>
       <section className="hero-section bg-surface">
-        <div className="grid pt-14 md:pt-20 lg:pt-24 pb-[150px] px-6 md:px-12 lg:px-16 xl:px-20">
-          <div className="animate-fade-in-up max-w-md md:max-w-lg lg:max-w-xl mb-4">
-              <h1 className="font-semibold font-primary text-text text-5xl leading-12 lg:text-7xl lg:leading-20">{t('hero.title')}</h1>
-          </div>
-          <div className="animate-fade-in-up max-w-6xl mb-16" style={{ animationDelay: '0.15s' }}>
-            <p className="tracking-tight font-normal font-primary text-text text-xl md:text-2xl lg:text-3xl lg:leading-11">{t('hero.subtitle')}</p>
-          </div>
-          <div className="animate-fade-in-up mb-8" style={{ animationDelay: '0.3s' }}>
-            <button
-              type="button"
-              className="btn px-4 py-5 text-sm lg:px-8 lg:py-5 lg:text-lg font-medium text-center"
-              onClick={() => document.getElementById('templates-section')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              {t('hero.cta')}
-            </button>
-          </div>
-          <div className="animate-fade-in-up flex flex-col md:flex-row pb-24 mb-[90px]" style={{ animationDelay: '0.4s' }}>
-            <div className="hero-section-features mb-5 md:mb-0">
-              <i className="mr-2">
-                <img src="/assets/check.svg" className="w-4"/>
-              </i>
-              <span className="hero-section-features-items">{t('hero.feature1')}</span>
+        <div className="max-w-[1600px] mx-auto pt-8 md:pt-12 lg:pt-16 pb-16 px-6 md:px-12 lg:px-16 xl:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+            {/* Left column: Copy */}
+            <div className="flex flex-col lg:col-span-5">
+              <FadeIn direction="up" delay={0}>
+                <HeroBadge />
+              </FadeIn>
+
+              <FadeIn direction="up" delay={0.1}>
+                <h1 className="font-primary font-bold text-text text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mt-6 mb-6">
+                  {t('hero.headlinePre')}
+                  <RotatingText
+                    words={[t('hero.headlineWord1'), t('hero.headlineWord2'), t('hero.headlineWord3'), t('hero.headlineWord4')]}
+                    className="hero-gradient-text"
+                  />
+                  {t('hero.headlinePost')}
+                </h1>
+              </FadeIn>
+
+              <FadeIn direction="up" delay={0.2}>
+                <p className="font-primary font-normal text-text-secondary text-lg md:text-xl lg:text-2xl mb-8 max-w-xl">
+                  {t('hero.subtitle')}
+                </p>
+              </FadeIn>
+
+              <FadeIn direction="up" delay={0.3}>
+                <HeroCTA />
+              </FadeIn>
+
+              <FadeIn direction="up" delay={0.4}>
+                <HeroFeaturePills />
+              </FadeIn>
             </div>
-            <div className="hero-section-features mb-5 md:mb-0">
-              <i className="mr-2">
-                <img src="/assets/check.svg" className="w-4"/>
-              </i>
-              <span className="hero-section-features-items">{t('hero.feature2')}</span>
-            </div>
-            <div className="hero-section-features">
-              <i className="mr-2">
-                <img src="/assets/check.svg" className="w-4"/>
-              </i>
-              <span className="hero-section-features-items">{t('hero.feature3')}</span>
-            </div>
+
+            {/* Right column: Visual showcase */}
+            <FadeIn direction="left" delay={0.3} duration={0.8} className="lg:col-span-7">
+              <ModalShowcase />
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      <section className="hero-section-stats">
-        <div className="grid pt-14 md:pt-20 lg:pt-24 px-6 md:px-12 lg:px-16 xl:px-20">
-
-          <Card />
-
+      <section className="hero-stats-section">
+        <div className="max-w-[1400px] mx-auto py-16 md:py-24 px-6 md:px-12 lg:px-16 xl:px-20">
           <FadeIn direction="up" delay={0.2}>
-            <div className="flex flex-col lg:flex-row justify-center items-center mb-[130px]">
-              <div className="hero-section-stats-col">
-                <p className="hero-section-stats-numbers">{t('hero.stat1Value')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat1Label1')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat1Label2')}</p>
-              </div>
-              <div className="hero-section-stats-col">
-                <p className="hero-section-stats-numbers">{t('hero.stat2Value')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat2Label1')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat2Label2')}</p>
-              </div>
-              <div className="hero-section-stats-col">
-                <p className="hero-section-stats-numbers">{t('hero.stat3Value')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat3Label1')}</p>
-                <p className="hero-section-stats-description">{t('hero.stat3Label2')}</p>
-              </div>
-              <div className="h-32 text-white text-center lg:text-left">
-                <p className="hero-section-stats-getpopup">{t('hero.tagline1')}</p>
-                <p className="hero-section-stats-getpopup">{t('hero.tagline2')}</p>
-                <p className="hero-section-stats-getpopup">{t('hero.tagline3')}</p>
-              </div>
-            </div>
+            <HeroStats />
           </FadeIn>
         </div>
       </section>
-
-
     </>
-  )
-}
+  );
+};
 
-export default index
+export default Hero;
