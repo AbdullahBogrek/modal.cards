@@ -10,7 +10,7 @@ describe('Generator', () => {
 
   it('renders description text', () => {
     render(<Generator />);
-    expect(screen.getByText(/Measure your return on email marketing/)).toBeInTheDocument();
+    expect(screen.getByText(/Build high-converting popup modals/)).toBeInTheDocument();
   });
 
   it('shows CardPlaceholder when no template is selected (id=0)', () => {
@@ -20,27 +20,27 @@ describe('Generator', () => {
 
   it('renders Templates section', () => {
     render(<Generator />);
-    expect(screen.getByText('Choose your template')).toBeInTheDocument();
+    expect(screen.getAllByText('Choose your template').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Appearance section', () => {
     render(<Generator />);
-    expect(screen.getByText(/Appearance/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Appearance/).length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Content section', () => {
     render(<Generator />);
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    expect(screen.getAllByText('Content').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Targeting section', () => {
     render(<Generator />);
-    expect(screen.getByText('Targeting')).toBeInTheDocument();
+    expect(screen.getAllByText('Targeting').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Settings section', () => {
     render(<Generator />);
-    expect(screen.getByText('Settings')).toBeInTheDocument();
+    expect(screen.getAllByText('Settings').length).toBeGreaterThanOrEqual(1);
   });
 
   it('replaces CardPlaceholder with Modal1 when template 1 is selected', async () => {

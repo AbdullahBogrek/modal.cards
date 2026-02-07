@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslation } from '../../contexts/TranslationContext';
+import LanguageSwitcher from '../LanguageSwitcher';
+import ThemeToggle from '../ThemeToggle';
 
 const index = () => {
   const [active, setActive] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   const handleClick = () => {
     setActive(!active);
@@ -10,14 +14,14 @@ const index = () => {
 
   return (
     <>
-        <nav className="flex flex-wrap items-center justify-between mx-auto max-w-[1194px] pt-6 px-6 lg:px-0">
+        <nav className="flex flex-wrap items-center justify-between pt-6 px-6 md:px-12 lg:px-16 xl:px-20">
             <div className="flex items-center flex-shrink-0 mr-21">
-                <img src="https://pub-64bc1fc0a86d4715bc552f7b0ae5d6f8.r2.dev/static/getpopup.png" className="mr-2 h-11 sm:h-11 border border-[#EAEAEA] rounded-lg p-1" alt="getpopup Logo" />
+                <img src="https://cdn.getpopup.site/static/getpopup.png" onError={(e) => { (e.target as HTMLImageElement).src = '/assets/logo.png'; }} className="mr-2 h-11 sm:h-11 border border-border-light rounded-lg p-1" alt="getpopup Logo" />
 
-                <span className="self-center text-xl font-extrabold whitespace-nowrap">getpopup</span>
+                <span className="self-center text-xl font-extrabold whitespace-nowrap text-text">getpopup</span>
             </div>
             <div className="block lg:hidden">
-                <button className="flex items-center px-3 py-2 border rounded text-black hover:text-white hover:border-white"
+                <button className="flex items-center px-3 py-2 border rounded text-text hover:text-white hover:border-white"
                     onClick={handleClick}
                 >
                     <img src="/assets/menu.svg"/>
@@ -29,7 +33,7 @@ const index = () => {
                 <div className="text-sm lg:flex-grow mt-5 lg:mt-0">
                     <Link href='/'>
                         <a href="#" className="nav-link-dropdown">
-                            <span>Solutions</span> 
+                            <span>{t('header.solutions')}</span> 
                             <i className="ml-1">
                                 <img src='/assets/down.svg'/>
                             </i>
@@ -37,20 +41,22 @@ const index = () => {
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="nav-link mr-6">Product Tour</a>
+                        <a href="#" className="nav-link mr-6">{t('header.productTour')}</a>
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="nav-link mr-6">Showcase</a>
+                        <a href="#" className="nav-link mr-6">{t('header.showcase')}</a>
                     </Link>
 
                     <Link href='/'>
-                        <a href="#" className="nav-link">Pricing</a>
+                        <a href="#" className="nav-link">{t('header.pricing')}</a>
                     </Link>
                 </div>
-                <div className='mt-5 lg:mt-0'>
-                    <a href="#" className="inline-block mt-4 lg:mt-0 text-black font-secondary hover:text-[#7D4AEA] font-medium pr-8 text-base">Sign in</a>
-                    <button type="button" className="btn text-base px-5 py-2">Try for free</button>
+                <div className='mt-5 lg:mt-0 flex items-center gap-4'>
+                    <ThemeToggle />
+                    <LanguageSwitcher />
+                    <a href="#" className="inline-block mt-4 lg:mt-0 text-text font-secondary hover:text-primary font-medium pr-8 text-base">{t('header.signIn')}</a>
+                    <button type="button" className="btn text-base px-5 py-2">{t('header.tryForFree')}</button>
                 </div>
             </div>
         </nav>

@@ -3,6 +3,7 @@ import { useModalContext } from "../../../contexts/ModalContext";
 import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 import { generateEmbedCode } from "../../../lib/generateEmbedCode";
 import { useStepValidation } from "../../../hooks/useStepValidation";
+import { useTranslation } from '../../../contexts/TranslationContext';
 
 const index = () => {
   const [isClick, setIsClick] = useState<boolean>(false)
@@ -12,6 +13,7 @@ const index = () => {
   const { id } = useModalContext()
   const customization = useModalCustomizationContext();
   const { isSettingsEnabled } = useStepValidation();
+  const { t } = useTranslation();
 
   const handleClick = () => {
     const code = generateEmbedCode({
@@ -74,26 +76,27 @@ const index = () => {
     <div className={`mt-18 mb-10 lg:mb-0 ${isSettingsEnabled ? "" : "opacity-60 bg-red"}`}>
           <div className="flex items-center mb-6 mt-18">
             <span className='generator-title'><p className='generator-title-number'>5</p></span>
-            <h5 className='generator-title-text'>Settings</h5>
+            <h5 className='generator-title-text'>{t('generator.step5Title')}</h5>
           </div>
+          <p className="text-sm text-text-muted ml-12 -mt-4 mb-4">{t('generator.step5Desc')}</p>
 
-          <h6 className='mb-3 font-primary font-semibold text-lg text-black tracking-wide leading-9'>Webhook to Send data</h6>
+          <h6 className='mb-3 font-primary font-semibold text-lg text-text tracking-wide leading-9'>{t('generator.webhookTitle')}</h6>
 
-          <p className='mb-1 font-primary font-normal text-sm text-black'>Enter your Webhook URL</p>
-          <p className='mb-3 font-primary font-normal text-xs text-black'>You can create a simple one with <span className='font-semibold'>make.com</span></p>
+          <p className='mb-1 font-primary font-normal text-sm text-text'>{t('generator.webhookLabel')}</p>
+          <p className='mb-3 font-primary font-normal text-xs text-text-secondary'>{t('generator.webhookHelper')} <span className='font-semibold'>make.com</span></p>
 
-          <input type="text" className="w-full border border-[#DDDDDD] hover:border-[#7D4AEA] focus:border-[#7D4AEA] text-black text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3" placeholder="Your Webhook URL" value={customization.webhookUrl} onChange={(e) => customization.setWebhookUrl(e.target.value)} required disabled={!isSettingsEnabled}/>
+          <input type="text" className="w-full border border-border hover:border-primary focus:border-primary text-text bg-surface text-sm font-secondary font-normal rounded-lg px-[9px] py-3 mb-3" placeholder={t('generator.webhookPlaceholder')} value={customization.webhookUrl} onChange={(e) => customization.setWebhookUrl(e.target.value)} required disabled={!isSettingsEnabled}/>
 
           <div className="flex flex-row items-center mb-3">
-            <input id="form-submission-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendFormSubmission} onChange={(e) => customization.setSendFormSubmission(e.target.checked)} disabled={!isSettingsEnabled}/>
-            <label htmlFor="form-submission-checkbox" className="settings-checkbox-label">Send form submission</label>
+            <input id="form-submission-checkbox" type="checkbox" className="settings-checkbox accent-primary" checked={customization.sendFormSubmission} onChange={(e) => customization.setSendFormSubmission(e.target.checked)} disabled={!isSettingsEnabled}/>
+            <label htmlFor="form-submission-checkbox" className="settings-checkbox-label">{t('generator.sendFormSubmission')}</label>
           </div>
           <div className="flex flex-row items-center mb-10">
-            <input id="click-data-checkbox" type="checkbox" className="settings-checkbox accent-[#7D4AEA]" checked={customization.sendClickData} onChange={(e) => customization.setSendClickData(e.target.checked)} disabled={!isSettingsEnabled}/>
-            <label htmlFor="click-data-checkbox" className="settings-checkbox-label">Send click data</label>
+            <input id="click-data-checkbox" type="checkbox" className="settings-checkbox accent-primary" checked={customization.sendClickData} onChange={(e) => customization.setSendClickData(e.target.checked)} disabled={!isSettingsEnabled}/>
+            <label htmlFor="click-data-checkbox" className="settings-checkbox-label">{t('generator.sendClickData')}</label>
           </div>
 
-          <button className='btn px-8 py-[19px] text-lg font-primary tracking-wide mb-6' disabled={!isSettingsEnabled} onClick={handleClick}>Get your Code</button>
+          <button className='btn px-8 py-[19px] text-lg font-primary tracking-wide mb-6' disabled={!isSettingsEnabled} onClick={handleClick}>{t('generator.getYourCode')}</button>
 
           {isClick && (
             <>
@@ -101,11 +104,11 @@ const index = () => {
                 <pre className='p-4 text-white text-xs font-mono overflow-auto whitespace-pre-wrap break-all max-h-[250px]'>{generatedCode}</pre>
               </div>
 
-              <button className='btn font-primary tracking-wide px-4 py-2 rounded-[160px] mb-3' disabled={!isSettingsEnabled} onClick={handleCopy}>{copied ? 'Copied!' : 'Copy the code'}</button>
+              <button className='btn font-primary tracking-wide px-4 py-2 rounded-[160px] mb-3' disabled={!isSettingsEnabled} onClick={handleCopy}>{copied ? t('generator.copied') : t('generator.copyTheCode')}</button>
 
               <div className="flex flex-row items-start gap-2 mb-4">
                 <img src="/assets/warning_sign.svg" className='mt-0.5 flex-shrink-0' />
-                <p className='font-primary font-normal text-xs text-black leading-4'>Copy and paste the embed code above just before the closing <code className='font-mono bg-gray-100 px-1 rounded'>&lt;/body&gt;</code> tag of your website template file.</p>
+                <p className='font-primary font-normal text-xs text-text leading-4'>{t('generator.embedInstruction')} <code className='font-mono bg-surface-alt px-1 rounded'>{t('generator.embedTag')}</code> {t('generator.embedEnd')}</p>
               </div>
             </>
           )}

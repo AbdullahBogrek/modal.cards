@@ -6,6 +6,7 @@ import Content from "./Content"
 import Targeting from "./Targeting"
 import Settings from "./Settings"
 import CardPlaceholder from "./CardPlaceholder"
+import WizardProgress from "./WizardProgress"
 
 import Modal1 from "../Modals/Modal1"
 import Modal2 from "../Modals/Modal2"
@@ -23,6 +24,7 @@ import Modal12 from "../Modals/Modal12"
 
 import { useModalContext } from "../../contexts/ModalContext";
 import { useModalCustomizationContext } from "../../contexts/ModalCustomizationContext";
+import { useTranslation } from '../../contexts/TranslationContext';
 
 const POSITION_STYLES: Record<string, React.CSSProperties> = {
   "top-left":      { justifyContent: "flex-start", alignItems: "flex-start" },
@@ -43,36 +45,42 @@ const card = [ <Modal1/>, <Modal2/>, <Modal3/>, <Modal4/>, <Modal5/>, <Modal6/>,
 const index = () => {
   const { id } = useModalContext();
   const { position, size } = useModalCustomizationContext();
+  const { t } = useTranslation();
 
   const posStyle = POSITION_STYLES[position] || POSITION_STYLES["center"];
   const scale = SIZE_SCALE[size] || SIZE_SCALE.md;
 
   return (
-    <div id="templates-section" className='max-w-[1194px] mx-auto mt-18'>
+    <div id="templates-section" className='max-w-[1400px] mx-auto mt-18 px-6 xl:px-8'>
 
-      <div className="px-5 xl:px-0">
-        <h2 className='section-title tracking-wide mb-3'>Modal Card Generator</h2>
-        <h4 className='w-[460px] font-primary font-normal text-base tracking-tight'>Measure your return on email marketing efforts easier and faster by using thebest online tools. getpopup is ready to help you build an efficient email list!</h4>
+      <div className="px-0">
+        <h2 className='section-title tracking-wide mb-3'>{t('generator.title')}</h2>
+        <h4 className='max-w-[460px] w-full font-primary font-normal text-base tracking-tight text-text-secondary'>{t('generator.subtitle')}</h4>
       </div>
 
       <div className="mt-24">
         <Templates />
-        <div className='px-5 xl:px-0 mt-18'>
+        <div className='px-0 mt-18'>
           <div className="flex flex-col lg:flex-row justify-center">
             <div className="w-full lg:w-1/3 mr-20">
+              <WizardProgress />
               <Appearance />
               <Content />
               <Targeting />
               <Settings />
             </div>
 
-            <div className="w-full lg:w-2/3 h-[700px] sticky top-10 overflow-hidden bg-[#F9F9F9] rounded-xl border border-[#EAEAEA]">
+            <div className="w-full lg:w-2/3 h-[700px] sticky top-10 overflow-hidden bg-surface-elevated rounded-xl border border-border-light">
               { id === 0 ? (
                 <div className="flex items-center justify-center h-full">
                   <CardPlaceholder />
                 </div>
               ) : (
-                <div className="flex w-full h-full p-6" style={posStyle}>
+                <div
+                  key={id}
+                  className="flex w-full h-full p-6 animate-fade-in-none"
+                  style={posStyle}
+                >
                   <div style={{ transform: `scale(${scale})`, transformOrigin: `${posStyle.alignItems === 'flex-start' ? 'top' : posStyle.alignItems === 'flex-end' ? 'bottom' : 'center'} ${posStyle.justifyContent === 'flex-start' ? 'left' : posStyle.justifyContent === 'flex-end' ? 'right' : 'center'}` }}>
                     {card[id - 1]}
                   </div>

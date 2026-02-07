@@ -1,17 +1,20 @@
 import React from 'react'
 import { Accordion } from './Accordion'
+import { useTranslation } from '../../contexts/TranslationContext';
 
 const index = () => {
+  const { t } = useTranslation();
+
   return (
-    <section className='bg-white'>
-      <div className="flex flex-wrap max-w-[1194px] mx-auto pt-24">
-        <div className="section-title mb-10 text-center">Frequently Asked Questions</div>        
-          <Accordion title="How do I pay for the essentials or premium plan?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
-          <Accordion title="Can I cancel my essentials or premium plan subscription at my time?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
-          <Accordion title="How do I pay for the essentials or premium plan?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
-          <Accordion title="We need to add new users to our team, how will that be billed?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
-          <Accordion title="How do I pay for the essentials or premium plan?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
-          <Accordion title="Can I cancel my essentials or premium plan subscription at my time?" content="You can pay with a credit card or via net banking (if you’re in United States). We willrenew your subscription automatically at the end of every billing cycle. You can paywith a credit card or via net banking (if you’re in United States). We will renew your subscription automatically at the end of every billing cycle." />
+    <section className='bg-surface'>
+      <div className="flex flex-wrap max-w-[1400px] mx-auto pt-24 px-6 xl:px-8">
+        <div className="section-title mb-10 text-center">{t('faq.title')}</div>
+          <Accordion title={t('faq.q1')} content={t('faq.a1')} />
+          <Accordion title={t('faq.q2')} content={t('faq.a2')} />
+          <Accordion title={t('faq.q3')} content={t('faq.a3')} />
+          <Accordion title={t('faq.q4')} content={t('faq.a4')} />
+          <Accordion title={t('faq.q5')} content={t('faq.a5')} />
+          <Accordion title={t('faq.q6')} content={t('faq.a6')} />
       </div>
     </section>
   )

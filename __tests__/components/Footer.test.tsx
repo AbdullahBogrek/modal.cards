@@ -9,8 +9,9 @@ describe('Footer', () => {
 
   it('renders all four footer cards', () => {
     render(<Footer />);
-    const targetingOptions = screen.getAllByText('Targeting Options');
-    expect(targetingOptions).toHaveLength(3);
+    expect(screen.getByText('Targeting Options')).toBeInTheDocument();
     expect(screen.getByText('No-Code')).toBeInTheDocument();
+    expect(screen.getByText('Integrations')).toBeInTheDocument();
+    expect(screen.getByText('Performance')).toBeInTheDocument();
   });
 });

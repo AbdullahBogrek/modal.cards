@@ -7,5 +7,8 @@ coverage
 .claude
 e2e
 __tests__
+__mocks__
 test-utils
 .storybook
+jest.config.js
+playwright.config.ts

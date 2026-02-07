@@ -9,7 +9,7 @@ describe('Hero', () => {
 
   it('renders the description text', () => {
     render(<Hero />);
-    expect(screen.getByText(/utility-first CSS framework/)).toBeInTheDocument();
+    expect(screen.getByText(/Create stunning popup modals/)).toBeInTheDocument();
   });
 
   it('renders CTA button', () => {

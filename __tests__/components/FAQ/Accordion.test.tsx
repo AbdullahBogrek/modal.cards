@@ -15,8 +15,8 @@ describe('Accordion', () => {
 
   it('content is hidden by default', () => {
     render(<Accordion {...defaultProps} />);
-    const content = screen.getByText('You can pay with a credit card.');
-    expect(content.closest('div')).toHaveClass('hidden');
+    const region = screen.getByRole('region');
+    expect(region).toHaveStyle({ height: '0', opacity: '0' });
   });
 
   it('shows content when title is clicked', async () => {
@@ -25,8 +25,9 @@ describe('Accordion', () => {
 
     await user.click(screen.getByRole('button'));
 
-    const content = screen.getByText('You can pay with a credit card.');
-    expect(content.closest('div')).not.toHaveClass('hidden');
+    expect(screen.getByText('You can pay with a credit card.')).toBeInTheDocument();
+    const region = screen.getByRole('region');
+    expect(region).toHaveStyle({ opacity: '1' });
   });
 
   it('hides content when clicked again (toggle)', async () => {
@@ -37,8 +38,8 @@ describe('Accordion', () => {
     await user.click(button); // open
     await user.click(button); // close
 
-    const content = screen.getByText('You can pay with a credit card.');
-    expect(content.closest('div')).toHaveClass('hidden');
+    const region = screen.getByRole('region');
+    expect(region).toHaveStyle({ height: '0', opacity: '0' });
   });
 
   it('changes background color when expanded', async () => {
@@ -46,9 +47,9 @@ describe('Accordion', () => {
     const { container } = render(<Accordion {...defaultProps} />);
 
     const wrapper = container.firstChild as HTMLElement;
-    expect(wrapper).toHaveClass('bg-white');
+    expect(wrapper).toHaveClass('bg-surface');
 
     await user.click(screen.getByRole('button'));
-    expect(wrapper).toHaveClass('bg-[#F5F5F5]');
+    expect(wrapper).toHaveClass('bg-surface-alt');
   });
 });

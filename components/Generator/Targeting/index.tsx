@@ -1,9 +1,11 @@
 import { useModalCustomizationContext } from "../../../contexts/ModalCustomizationContext";
 import { useStepValidation } from "../../../hooks/useStepValidation";
+import { useTranslation } from '../../../contexts/TranslationContext';
 import Language from "./Languages"
 
 const index = () => {
   const { isTargetingEnabled } = useStepValidation();
+  const { t } = useTranslation();
   const {
     visitorDevice, setVisitorDevice,
     xSeconds, setXSeconds, xSecondsActive, setXSecondsActive,
@@ -19,13 +21,14 @@ const index = () => {
           {/* Section Title */}
           <div className="flex items-center mb-6">
             <span className='generator-title'><p className='generator-title-number'>4</p></span>
-            <h5 className='generator-title-text'>Targeting</h5>
+            <h5 className='generator-title-text'>{t('generator.step4Title')}</h5>
           </div>
+          <p className="text-sm text-text-muted ml-12 -mt-4 mb-4">{t('generator.step4Desc')}</p>
 
           {/* Visitor Device */}
           <div className="targeting-features">
-            <h6 className='targeting-feature-title'>Visitor Device</h6>
-            <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${visitorDevice.isActive ? "bg-[#7D4AEA]" : ""}`}
+            <h6 className='targeting-feature-title'>{t('generator.visitorDevice')}</h6>
+            <div className={`w-12 h-6 flex items-center bg-surface-alt rounded-full p-1 cursor-pointer ${visitorDevice.isActive ? "bg-primary" : ""}`}
               onClick={() => {
                 if (!isTargetingEnabled) return;
                 const newVal = !visitorDevice.isActive;
@@ -33,7 +36,7 @@ const index = () => {
 
               }}
             >
-              <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${visitorDevice.isActive ? "transform translate-x-6" : ""}`}
+              <div className={`bg-surface w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${visitorDevice.isActive ? "transform translate-x-6" : ""}`}
               ></div>
             </div>
           </div>
@@ -41,25 +44,25 @@ const index = () => {
           <div className="grid grid-cols-2 gap-5 rounded-xl h-12 mb-6">
             <div className="targeting-visitor-device">
               <div className={`targeting-visitor-device-content ${visitorDevice.isActive ? "" : "opacity-50"}`}>
-                <input id="desktop-checkbox" type="checkbox" className="targeting-visitor-device-content-input accent-[#7D4AEA]" checked={visitorDevice.desktop} onChange={(e) => setVisitorDevice.setDesktop(e.target.checked)} disabled={!visitorDevice.isActive}/>
+                <input id="desktop-checkbox" type="checkbox" className="targeting-visitor-device-content-input accent-primary" checked={visitorDevice.desktop} onChange={(e) => setVisitorDevice.setDesktop(e.target.checked)} disabled={!visitorDevice.isActive}/>
                 <img src="/assets/desktop_icon.svg"/>
-                <label htmlFor="desktop-checkbox" className="ml-1 text-sm font-normal text-black ">Desktop</label>
+                <label htmlFor="desktop-checkbox" className="ml-1 text-sm font-normal text-text">{t('generator.desktop')}</label>
               </div>
             </div>
 
             <div className="targeting-visitor-device">
               <div className={`targeting-visitor-device-content ${visitorDevice.isActive ? "" : "opacity-50"}`}>
-                <input id="mobile-checkbox" type="checkbox" className="targeting-visitor-device-content-input accent-[#7D4AEA]" checked={visitorDevice.mobile} onChange={(e) => setVisitorDevice.setMobile(e.target.checked)} disabled={!visitorDevice.isActive}/>
+                <input id="mobile-checkbox" type="checkbox" className="targeting-visitor-device-content-input accent-primary" checked={visitorDevice.mobile} onChange={(e) => setVisitorDevice.setMobile(e.target.checked)} disabled={!visitorDevice.isActive}/>
                 <img src="/assets/mobile_icon.svg"/>
-                <label htmlFor="mobile-checkbox" className="ml-1 text-sm font-normal text-black ">Mobile</label>
+                <label htmlFor="mobile-checkbox" className="ml-1 text-sm font-normal text-text">{t('generator.mobile')}</label>
               </div>
             </div>
           </div>
 
           {/* After X Seconds Input */}
           <div className="targeting-features">
-            <h6 className='targeting-feature-title'>After X seconds</h6>
-            <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${xSecondsActive ? "bg-[#7D4AEA]" : ""}`}
+            <h6 className='targeting-feature-title'>{t('generator.afterXSeconds')}</h6>
+            <div className={`w-12 h-6 flex items-center bg-surface-alt rounded-full p-1 cursor-pointer ${xSecondsActive ? "bg-primary" : ""}`}
               onClick={() => {
                 if (!isTargetingEnabled) return;
                 const newVal = !xSecondsActive;
@@ -67,7 +70,7 @@ const index = () => {
 
               }}
             >
-              <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xSecondsActive ? "transform translate-x-6" : ""}`}
+              <div className={`bg-surface w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xSecondsActive ? "transform translate-x-6" : ""}`}
               ></div>
             </div>
           </div>
@@ -78,8 +81,8 @@ const index = () => {
 
           {/* After % Scroll Input */}
           <div className="targeting-features">
-            <h6 className='targeting-feature-title'>After % Scroll</h6>
-            <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${xScrollActive ? "bg-[#7D4AEA]" : ""}`}
+            <h6 className='targeting-feature-title'>{t('generator.afterPercentScroll')}</h6>
+            <div className={`w-12 h-6 flex items-center bg-surface-alt rounded-full p-1 cursor-pointer ${xScrollActive ? "bg-primary" : ""}`}
               onClick={() => {
                 if (!isTargetingEnabled) return;
                 const newVal = !xScrollActive;
@@ -87,7 +90,7 @@ const index = () => {
 
               }}
             >
-              <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xScrollActive ? "transform translate-x-6" : ""}`}
+              <div className={`bg-surface w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${xScrollActive ? "transform translate-x-6" : ""}`}
               ></div>
             </div>
           </div>
@@ -97,8 +100,8 @@ const index = () => {
 
           {/* Traffic Source */}
           <div className="targeting-features">
-            <h6 className='targeting-feature-title'>Traffic Source</h6>
-            <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${trafficSourceActive ? "bg-[#7D4AEA]" : ""}`}
+            <h6 className='targeting-feature-title'>{t('generator.trafficSource')}</h6>
+            <div className={`w-12 h-6 flex items-center bg-surface-alt rounded-full p-1 cursor-pointer ${trafficSourceActive ? "bg-primary" : ""}`}
               onClick={() => {
                 if (!isTargetingEnabled) return;
                 const newVal = !trafficSourceActive;
@@ -106,12 +109,12 @@ const index = () => {
 
               }}
             >
-              <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${trafficSourceActive ? "transform translate-x-6" : ""}`}
+              <div className={`bg-surface w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${trafficSourceActive ? "transform translate-x-6" : ""}`}
               ></div>
             </div>
           </div>
           <div className="grid grid-cols-1 mb-16">
-            <input type="text" className={`${trafficSourceActive ? "targeting-features-input-active" : "targeting-features-input-disable"}`} placeholder="Enter your traffic source domain" value={trafficSource} onChange={(e) => setTrafficSource(e.target.value)} required disabled={!trafficSourceActive}/>
+            <input type="text" className={`${trafficSourceActive ? "targeting-features-input-active" : "targeting-features-input-disable"}`} placeholder={t('generator.trafficSourcePlaceholder')} value={trafficSource} onChange={(e) => setTrafficSource(e.target.value)} required disabled={!trafficSourceActive}/>
           </div>
 
           {/* Browser Language */}
@@ -119,8 +122,8 @@ const index = () => {
 
           {/* Exit Intent Targeting */}
           <div className="targeting-features">
-            <h6 className='targeting-feature-title'>Exit Intent Targeting</h6>
-            <div className={`w-12 h-6 flex items-center bg-[#F5F5F5] rounded-full p-1 cursor-pointer ${exitIntent ? "bg-[#7D4AEA]" : ""}`}
+            <h6 className='targeting-feature-title'>{t('generator.exitIntent')}</h6>
+            <div className={`w-12 h-6 flex items-center bg-surface-alt rounded-full p-1 cursor-pointer ${exitIntent ? "bg-primary" : ""}`}
               onClick={() => {
                 if (!isTargetingEnabled) return;
                 const newVal = !exitIntent;
@@ -128,7 +131,7 @@ const index = () => {
 
               }}
             >
-              <div className={`bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${exitIntent ? "transform translate-x-6" : ""}`}
+              <div className={`bg-surface w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out ${exitIntent ? "transform translate-x-6" : ""}`}
               ></div>
             </div>
           </div>

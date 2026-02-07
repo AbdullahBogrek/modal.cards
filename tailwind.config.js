@@ -1,29 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {  
+  theme: {
     fontFamily: {
       primary: ["Poppins", "sans-serif"],
       secondary: ["Inter", "sans-serif"],
     },
     extend: {
-      // colors: {
-      //   'primary': '#7D4AEA',
-      //   'white': '#FFFFFF',
-      //   'black': '#000000',
-      //   'gray': '#666666',
-      //   'red': '#EA0F0F',
-      //   'soft-gray': '#F5F5F5',
-      //   'accordion-gray': '#777777',
-      //   'generator-gray': '#EAEAEA',
-      //   'soft-white': '#FBEEE4',
-      //   'deneme': "#DDDDDD",
-      //   'code-snippet': "#333333",
-      // //   'soluk-gray': "#717791"
-      // },
+      colors: {
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        'primary-hover': 'rgb(var(--color-primary-hover) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        'surface-alt': 'rgb(var(--color-surface-alt) / <alpha-value>)',
+        'surface-elevated': 'rgb(var(--color-surface-elevated) / <alpha-value>)',
+        border: 'rgb(var(--color-border) / <alpha-value>)',
+        'border-light': 'rgb(var(--color-border-light) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        'text-secondary': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        'text-muted': 'rgb(var(--color-text-muted) / <alpha-value>)',
+        'text-disabled': 'rgb(var(--color-text-disabled) / <alpha-value>)',
+        'code-bg': 'rgb(var(--color-code-bg) / <alpha-value>)',
+        'stats-bg': 'rgb(var(--color-stats-bg) / <alpha-value>)',
+      },
       margin: {
         '1': "5px",
         '2': "10px",

@@ -10,7 +10,7 @@ import Generator from "../components/Generator"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="bg-surface text-text min-h-screen">
       <Head>
         <title>Free Popup Generator</title>
       </Head>

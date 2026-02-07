@@ -16,8 +16,8 @@ describe('Features', () => {
 
   it('renders feature descriptions', () => {
     render(<Features />);
-    expect(screen.getByText(/calculate your email marketing roi/)).toBeInTheDocument();
-    expect(screen.getByText(/generating afree code/)).toBeInTheDocument();
-    expect(screen.getByText(/estimate the total profit/)).toBeInTheDocument();
+    expect(screen.getByText(/Beautifully crafted modal templates/)).toBeInTheDocument();
+    expect(screen.getByText(/Optimized layouts and CTA placements/)).toBeInTheDocument();
+    expect(screen.getByText(/Clean, contemporary designs/)).toBeInTheDocument();
   });
 });
