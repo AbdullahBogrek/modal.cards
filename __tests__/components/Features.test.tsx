@@ -2,22 +2,26 @@ import { render, screen } from '../../test-utils/render';
 import Features from '../../components/Features';
 
 describe('Features', () => {
-  it('renders section title', () => {
+  it('renders section title and subtitle', () => {
     render(<Features />);
-    expect(screen.getByText('Conversion & UX ready popups & modals')).toBeInTheDocument();
+    expect(screen.getByText('Why getpopup?')).toBeInTheDocument();
+    expect(screen.getByText('Everything you need to create popups that convert')).toBeInTheDocument();
   });
 
-  it('renders all three feature cards', () => {
+  it('renders all six feature cards', () => {
     render(<Features />);
-    expect(screen.getByText('Pixel Perfect')).toBeInTheDocument();
-    expect(screen.getByText('Conversion Ready')).toBeInTheDocument();
-    expect(screen.getByText('Modern & Useful')).toBeInTheDocument();
+    expect(screen.getByText('Smart Targeting')).toBeInTheDocument();
+    expect(screen.getByText('Visual Editor')).toBeInTheDocument();
+    expect(screen.getByText('Lightweight')).toBeInTheDocument();
+    expect(screen.getByText('Mobile Ready')).toBeInTheDocument();
+    expect(screen.getByText('Webhooks & APIs')).toBeInTheDocument();
+    expect(screen.getByText('Multi-language')).toBeInTheDocument();
   });
 
   it('renders feature descriptions', () => {
     render(<Features />);
-    expect(screen.getByText(/Beautifully crafted modal templates/)).toBeInTheDocument();
-    expect(screen.getByText(/Optimized layouts and CTA placements/)).toBeInTheDocument();
-    expect(screen.getByText(/Clean, contemporary designs/)).toBeInTheDocument();
+    expect(screen.getByText(/26\+ targeting triggers/)).toBeInTheDocument();
+    expect(screen.getByText(/drag-and-drop editor/)).toBeInTheDocument();
+    expect(screen.getByText(/Zero impact on your site speed/)).toBeInTheDocument();
   });
 });
