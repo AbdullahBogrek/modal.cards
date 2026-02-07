@@ -58,7 +58,7 @@ const ModalThumbnail = ({ templateId, children, selectText }: { templateId: numb
           {children}
         </TemplateDefaultsProvider>
       </div>
-      <div className="template-thumb-overlay group-hover:bg-primary/60">
+      <div className="template-thumb-overlay group-hover:bg-black/50">
         <button className='templates-container-button group-hover:block' tabIndex={-1}>{selectText}</button>
       </div>
     </div>
@@ -91,7 +91,7 @@ const index = () => {
           return (
             <StaggerItem key={num}>
               <div
-                className={`group cursor-pointer transition-all duration-200 rounded-xl overflow-hidden bg-border-light ${id === num ? 'ring-2 ring-primary ring-offset-2' : ''}`}
+                className={`group cursor-pointer transition-all duration-200 rounded-xl overflow-hidden bg-border-light ${id === num ? 'ring-2 ring-text ring-offset-2' : ''}`}
                 onClick={() => handleSelect(num)}
               >
                 <ModalThumbnail templateId={num} selectText={t('generator.selectTemplate')}>

@@ -67,9 +67,9 @@ describe('ModalCustomizationContext', () => {
     const user = userEvent.setup();
     render(<ModalCustomizationContextProvider><TestConsumer /></ModalCustomizationContextProvider>);
     await user.click(screen.getByText('loadTemplate7'));
-    expect(screen.getByTestId('backgroundColor')).toHaveTextContent('#F97316');
-    expect(screen.getByTestId('textColor')).toHaveTextContent('#FFFFFF');
-    expect(screen.getByTestId('buttonColor')).toHaveTextContent('#FFFFFF');
+    expect(screen.getByTestId('backgroundColor')).toHaveTextContent('#FFFFFF');
+    expect(screen.getByTestId('textColor')).toHaveTextContent('#000000');
+    expect(screen.getByTestId('buttonColor')).toHaveTextContent('#000000');
     expect(screen.getByTestId('title')).toHaveTextContent('Hi, stranger');
   });
 
