@@ -7,8 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      primary: ["Poppins", "sans-serif"],
-      secondary: ["Inter", "sans-serif"],
+      primary: ["Geist", "sans-serif"],
+      secondary: ["Geist", "sans-serif"],
     },
     extend: {
       colors: {
@@ -64,7 +64,7 @@ module.exports = {
         xs: ['13px', '16px'],
       },
       boxShadow: {
-        'template-button': '0px 5px 10px 2px rgba(125, 74, 234, 0.27)',
+        'template-button': '0px 5px 10px 2px rgba(249, 115, 22, 0.27)',
       },
       width: {
         'modal1-sm': '25rem',
