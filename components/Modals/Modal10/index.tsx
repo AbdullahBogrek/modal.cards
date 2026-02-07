@@ -5,9 +5,9 @@ const index = () => {
   const { title, subtitle, inputPlaceholder1, inputPlaceholder2, button2, linkText1, linkText2, image, textColor, buttonColor, placeholderColor, borderColor, backgroundColor } = useModalCustomizationContext();
 
   return (
-          <div className="flex flex-row justify-center items-center relative overflow-hidden border shadow-xl rounded-xl w-[740px]" style={{ backgroundColor, borderColor }}>
+          <div className="flex flex-row relative overflow-hidden border shadow-xl rounded-xl w-[740px]" style={{ backgroundColor, borderColor }}>
 
-            <div className="px-10 py-8 h-full text-start w-[51%]">
+            <div className="px-10 py-8 text-start w-[51%] flex flex-col justify-center">
                 <h2 className='font-secondary font-bold text-3xl mb-3' style={{ color: textColor }}>{title}</h2>
                 <h4 className='font-secondary font-normal text-xl mb-6' style={{ color: textColor }}>{subtitle}</h4>
 
@@ -28,7 +28,7 @@ const index = () => {
                 </div>
             </div>
 
-            <div className="w-[49%] overflow-hidden">
+            <div className="w-[49%]">
               <img src={image || "/assets/modal9_cover.png"} className='w-full h-full object-cover'/>
             </div>
 

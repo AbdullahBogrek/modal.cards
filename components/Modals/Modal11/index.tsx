@@ -5,13 +5,13 @@ const index = () => {
   const { title, subtitle, inputPlaceholder1, inputPlaceholder2, button2, linkText1, linkText2, image, textColor, buttonColor, placeholderColor, borderColor, backgroundColor } = useModalCustomizationContext();
 
   return (
-          <div className="flex flex-row relative rounded-xl w-[740px]">
+          <div className="relative rounded-xl w-[740px] h-[520px]">
 
-            <div className="flex rounded-xl overflow-hidden shadow-xl w-[74%] h-[420px]">
+            <div className="absolute inset-0 rounded-xl overflow-hidden shadow-xl">
                 <img src={image || "/assets/modal11_cover.png"} className='w-full h-full object-cover'/>
             </div>
 
-            <div className="px-10 py-8 text-start absolute inset-0 z-10 rounded-xl shadow-xl w-[51%] top-[60px] left-[49%]" style={{ backgroundColor }}>
+            <div className="px-10 py-8 text-start absolute z-10 rounded-xl shadow-xl border w-[52%] top-1/2 -translate-y-1/2 left-[46%]" style={{ backgroundColor, borderColor }}>
                 <h2 className='font-secondary font-bold text-3xl mb-3' style={{ color: textColor }}>{title}</h2>
                 <h4 className='font-secondary font-normal text-xl mb-6' style={{ color: textColor }}>{subtitle}</h4>
 
@@ -23,8 +23,8 @@ const index = () => {
                 </div>
 
                 <div className="inline-flex justify-between w-full">
-                    <a href='/' className='font-secondary font-normal text-sm text-start' style={{ color: textColor }}>{linkText1}</a>
-                    <a href='/' className='font-secondary font-normal text-sm text-start' style={{ color: textColor }}>{linkText2}</a>
+                    <a href='/' className='font-secondary font-normal text-sm' style={{ color: textColor }}>{linkText1}</a>
+                    <a href='/' className='font-secondary font-normal text-sm' style={{ color: textColor }}>{linkText2}</a>
                 </div>
 
                 <div className="absolute top-5 right-5">
