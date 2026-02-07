@@ -1,76 +1,100 @@
 # getpopup
 
-## Description
+The easiest way to create high-converting popups for your website. Pick a template, customize it visually, and get a ready-to-use embed code — no coding required.
 
-**getpopup is a Next.js, TypeScript and Tailwind based popup/modal generator project**. This project was developed within the scope of "[React Practicum](https://www.patika.dev/bootcamp/popupsmart-react-practicum)" realized in cooperation with [getpopup](https://getpopup.site) and [Patika.dev](https://www.patika.dev/). You can find the demo of the project [here](https://fascinating-halva-6e5468.netlify.app/). It does not meet all of the project requirements. Thanks for everything.
-
-## Table of Contents
-
-* [Prerequisites](#prerequisites)
-* [Technologies](#technologies)
-    * [Frontend](#frontend)
-* [Setup](#setup)
-* [Features](#features)
-    * [Room for Improvement](#room-for-improvement)
-    * [To Do](#to-do)
-* [Acknowledgements](#acknowledgements)
-    * [Project Status](#project-status)
-* [Contact](#contact)
-* [License](#license)
-
-## Prerequisites    
-
-- Have a billing account on [Google Cloud Console](https://console.cloud.google.com/getting-started?hl=tr).
-
-- Create a project on [Google Cloud Console](https://console.cloud.google.com/getting-started?hl=tr) and add **Maps JavaScript API** and **Geocoding API**. Get the access token.
-
-## Technologies
-
-### Frontend
-- React             - v18.0.21
-- Next.js           - v17.0.2
-- Typescript        - v4.8.3
-- Tailwind          - v3.1.8
-- Sass              - v1.55.0
-- Prettier          - v2.7.1
-- Eslint            - v8.24.0
-- Storybook         - v3.8.0
-
-## Setup
-
-To run this project, install it locally using npm:
-
-For Windows
-
-``` cmd
-> npm install
-> npm run dev
-```
+**Live demo:** [getpopup.site](https://getpopup.site)
 
 ## Features
 
-- You can select card template and customize your card.
-- You can choose colors, size, position, content, targeting, language support.
- 
-### Room for Improvement
+- **12 Popup Templates** — Newsletter signups, pricing plans, announcements, login forms, and more
+- **Visual Editor** — Customize colors, sizes, positions, content, and images with live preview
+- **Smart Targeting** — Show popups based on device, scroll depth, time delay, exit intent, traffic source, and browser language
+- **Typewriter Hero** — Rotating headline with typing animation showcasing different use cases
+- **Live Template Carousel** — Hero section renders actual modal components in an animated carousel
+- **Multi-language** — Full English and Turkish support with automatic browser language detection
+- **Dark Mode** — System-aware theme toggle across all pages
+- **Responsive** — Works on desktop, tablet, and mobile
 
-- Webhook to send data
-- Converting code to html code
+## Tech Stack
 
-## Acknowledgements
+- **Framework:** Next.js 12 (Pages Router)
+- **Language:** TypeScript 4.8
+- **Styling:** Tailwind CSS 3.1 + SCSS
+- **State:** React Context API
+- **Testing:** Jest 29 + React Testing Library 14 + Playwright
+- **Deployment:** Docker + Cloudflare Pages
 
-- This project has been developed as a practicum project.
+## Getting Started
 
-### Project Status
+```bash
+# Install dependencies
+npm install
 
-- The project is running. It has its deficiencies and needs further development. It does not meet all of the project requirements because of my lack of knowledge of Next.js and Typescript.
+# Start development server
+npm run dev
+```
 
-## Contact
+The app runs at [http://localhost:3000](http://localhost:3000).
 
-Created by [@Abdullah Böğrek](https://tr.linkedin.com/in/abdullahbogrek) - feel free to contact me!
+### Docker
 
-Mail: asbogrek@gmail.com
+```bash
+docker compose up -d --build
+```
+
+Serves at [http://localhost:6161](http://localhost:6161).
+
+## Project Structure
+
+```
+├── pages/              # Next.js pages (index, generator)
+├── components/
+│   ├── Header/         # Navigation with anchor links
+│   ├── Hero/           # Headline, CTA, carousel, stats
+│   ├── HowItWorks/     # 4-step explanation section
+│   ├── Features/       # 6-feature grid
+│   ├── FAQ/            # Accordion section
+│   ├── Footer/         # Columnar footer with links
+│   ├── Generator/      # Template picker, appearance, content, targeting, settings
+│   └── Modals/         # Modal1–Modal12 template components
+├── contexts/           # ModalContext, Modal1Context, TranslationContext, ThemeContext
+├── locales/            # en.json, tr.json
+├── styles/             # globals.scss
+└── __tests__/          # Unit and component tests
+```
+
+## Testing
+
+```bash
+# Run all unit tests
+npm test
+
+# Run with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
+```
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm start` | Start production server |
+| `npm test` | Run Jest tests |
+| `npm run test:e2e` | Run Playwright E2E tests |
+| `npm run storybook` | Start Storybook on port 6006 |
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feat/my-feature`)
+3. Commit your changes (`git commit -m 'feat: add my feature'`)
+4. Push to the branch (`git push origin feat/my-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is open source and available under the [MIT](https://opensource.org/licenses/MIT).
+[MIT](https://opensource.org/licenses/MIT)
